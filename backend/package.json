@@ -1,0 +1,8 @@
+{
+  "name": "full-mint-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wajidsiddiqi/full-mint-website.git",
+  "author": "Wajid <wajidsiddiqi12@gmail.com>",
+  "license": "MIT"
+}

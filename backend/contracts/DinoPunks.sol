@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract RoboPunksNFT is ERC721, Ownable {
+contract DinoPunks is ERC721, Ownable {
     using Strings for uint256;
     //* State Variables
     uint256 private constant PUBLIC_MINT_PRICE = 0.08 ether;
@@ -29,7 +29,7 @@ contract RoboPunksNFT is ERC721, Ownable {
     mapping(address => bool) private s_whitelists;
 
     //*Functions
-    constructor() ERC721("RoboPunks", "RP") {}
+    constructor() ERC721("DinoPunks", "DP") {}
 
     /**@dev This function changes the state of nft*/
     function changeNftMintState(

@@ -10,7 +10,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deployer } = await getNamedAccounts();
   const chainId = network.config.chainId;
 
-  const roboPunksNft = await deploy("RoboPunksNFT", {
+  const dinoPunks = await deploy("DinoPunks", {
     from: deployer,
     log: true,
     waitConfirmations: network.config.blockConfirmations || 1,
@@ -21,10 +21,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     process.env.ETHERSCAN_API_KEY
   ) {
     log("Verifying.....");
-    await verify(roboPunksNft.address);
+    await verify(dinoPunks.address);
   }
 
   log("---------------------------------------");
 };
 
-module.exports.tags = ["all", "roboPunksNft", "main"];
+module.exports.tags = ["all", "dinoPunks", "main"];

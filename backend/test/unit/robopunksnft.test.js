@@ -8,32 +8,32 @@ const { assert, expect } = require("chai");
 !developmentChains.includes(network.name)
   ? describe.skip
   : describe("RoboPunks Nft Unit Tests", function () {
-      let roboPunksNft, deployer;
+      let DinoPunks, deployer;
 
       beforeEach(async () => {
         accounts = await ethers.getSigners();
         deployer = accounts[0];
-        await deployments.fixture(["roboPunksNft"]);
-        const roboPunks = await deployments.get("RoboPunksNFT");
-        roboPunksNft = await ethers.getContractAt(
-          "RoboPunksNFT",
-          roboPunks.address
+        await deployments.fixture(["dinoPunks"]);
+        const dinoPunksDeployment = await deployments.get("DinoPunks");
+        DinoPunks = await ethers.getContractAt(
+          "DinoPunks",
+          dinoPunksDeployment.address
         );
       });
 
       describe("Constructor", () => {
         it("Initializes the NFT Correctly.", async () => {
-          const name = await roboPunksNft.name();
-          const symbol = await roboPunksNft.symbol();
-          const publicNftState = await roboPunksNft.getPublicNftState();
-          const wlNftState = await roboPunksNft.getWhitelistNftState();
-          const publicMintFee = await roboPunksNft.getPublicMintPrice();
-          const wlMintFee = await roboPunksNft.getWhitelistMintPrice();
-          const totalSupply = await roboPunksNft.getTotalSupply();
-          const maxSupply = await roboPunksNft.getMaxSupply();
-          const walletLimit = await roboPunksNft.getWalletLimit();
-          const revealState = await roboPunksNft.getRevealState();
-          const baseTokenURI = await roboPunksNft.getBaseTokenURI();
+          const name = await DinoPunks.name();
+          const symbol = await DinoPunks.symbol();
+          const publicNftState = await DinoPunks.getPublicNftState();
+          const wlNftState = await DinoPunks.getWhitelistNftState();
+          const publicMintFee = await DinoPunks.getPublicMintPrice();
+          const wlMintFee = await DinoPunks.getWhitelistMintPrice();
+          const totalSupply = await DinoPunks.getTotalSupply();
+          const maxSupply = await DinoPunks.getMaxSupply();
+          const walletLimit = await DinoPunks.getWalletLimit();
+          const revealState = await DinoPunks.getRevealState();
+          const baseTokenURI = await DinoPunks.getBaseTokenURI();
 
           assert.equal(name, "RoboPunks");
           assert.equal(symbol, "RP");
@@ -57,10 +57,10 @@ const { assert, expect } = require("chai");
 
       describe("NFT State Changer", () => {
         it("changes nft state", async () => {
-          const txResponse = await roboPunksNft.changeNftMintState(true, true);
+          const txResponse = await DinoPunks.changeNftMintState(true, true);
           await txResponse.wait(1);
-          const publicNftState = await roboPunksNft.getPublicNftState();
-          const wlNftState = await roboPunksNft.getWhitelistNftState();
+          const publicNftState = await DinoPunks.getPublicNftState();
+          const wlNftState = await DinoPunks.getWhitelistNftState();
 
           assert.equal(publicNftState, true);
           assert.equal(wlNftState, true);
@@ -71,16 +71,16 @@ const { assert, expect } = require("chai");
           const nonowner = accounts[1];
 
           await expect(
-            roboPunksNft.connect(nonowner).changeNftMintState(true, true)
+            DinoPunks.connect(nonowner).changeNftMintState(true, true)
           ).to.be.revertedWith("Ownable: caller is not the owner");
         });
       });
 
       describe("NFT Reveal", () => {
         it("changes nft reveal", async () => {
-          const txResponse = await roboPunksNft.isRevealed(true);
+          const txResponse = await DinoPunks.isRevealed(true);
           await txResponse.wait(1);
-          const revealState = await roboPunksNft.getRevealState();
+          const revealState = await DinoPunks.getRevealState();
 
           assert.equal(revealState, true);
         });
@@ -90,20 +90,16 @@ const { assert, expect } = require("chai");
           const nonowner = accounts[1];
 
           await expect(
-            roboPunksNft.connect(nonowner).isRevealed(true)
+            DinoPunks.connect(nonowner).isRevealed(true)
           ).to.be.revertedWith("Ownable: caller is not the owner");
         });
       });
 
       describe("Set WL", () => {
         it("sets WL addresses", async () => {
-          const txResponse = await roboPunksNft.setWhitelist([
-            deployer.address,
-          ]);
+          const txResponse = await DinoPunks.setWhitelist([deployer.address]);
           await txResponse.wait(1);
-          const whiteListed = await roboPunksNft.checkWhitelist(
-            deployer.address
-          );
+          const whiteListed = await DinoPunks.checkWhitelist(deployer.address);
 
           assert.equal(whiteListed, true);
         });
@@ -113,7 +109,7 @@ const { assert, expect } = require("chai");
           const nonowner = accounts[1];
 
           await expect(
-            roboPunksNft.connect(nonowner).setWhitelist([deployer.address])
+            DinoPunks.connect(nonowner).setWhitelist([deployer.address])
           ).to.be.revertedWith("Ownable: caller is not the owner");
         });
       });
@@ -122,59 +118,49 @@ const { assert, expect } = require("chai");
         let quantity, value;
 
         beforeEach(async () => {
-          const price = await roboPunksNft.getWhitelistMintPrice();
+          const price = await DinoPunks.getWhitelistMintPrice();
           quantity = 1;
           value = price.mul(quantity);
         });
 
         it("reverts if WL is not open", async () => {
           await expect(
-            roboPunksNft.whitelistMint(quantity, { value: value })
+            DinoPunks.whitelistMint(quantity, { value: value })
           ).to.be.revertedWith("WL mint not enabled");
         });
 
         it("reverts if not whitelisted", async () => {
-          const txResponse = await roboPunksNft.changeNftMintState(false, true);
+          const txResponse = await DinoPunks.changeNftMintState(false, true);
           await txResponse.wait(1);
 
           await expect(
-            roboPunksNft.whitelistMint(quantity, { value: value })
+            DinoPunks.whitelistMint(quantity, { value: value })
           ).to.be.revertedWith("not whitelisted");
         });
 
         it("reverts if wrong mint value added", async () => {
-          const txResponse1 = await roboPunksNft.changeNftMintState(
-            false,
-            true
-          );
+          const txResponse1 = await DinoPunks.changeNftMintState(false, true);
           await txResponse1.wait(1);
-          const txResponse2 = await roboPunksNft.setWhitelist([
-            deployer.address,
-          ]);
+          const txResponse2 = await DinoPunks.setWhitelist([deployer.address]);
           await txResponse2.wait(1);
 
           await expect(
-            roboPunksNft.whitelistMint(2, { value: value })
+            DinoPunks.whitelistMint(2, { value: value })
           ).to.be.revertedWith("wrong mint value");
         });
 
         it("allows whitelist users to mint nft", async () => {
-          const txResponse1 = await roboPunksNft.changeNftMintState(
-            false,
-            true
-          );
+          const txResponse1 = await DinoPunks.changeNftMintState(false, true);
           await txResponse1.wait(1);
-          const txResponse2 = await roboPunksNft.setWhitelist([
-            deployer.address,
-          ]);
+          const txResponse2 = await DinoPunks.setWhitelist([deployer.address]);
           await txResponse2.wait(1);
-          const txResponse3 = await roboPunksNft.whitelistMint(quantity, {
+          const txResponse3 = await DinoPunks.whitelistMint(quantity, {
             value: value,
           });
           await txResponse3.wait(1);
           const userAddress = deployer.address;
-          const userBalance = await roboPunksNft.balanceOf(userAddress);
-          const owner = await roboPunksNft.ownerOf(1);
+          const userBalance = await DinoPunks.balanceOf(userAddress);
+          const owner = await DinoPunks.ownerOf(1);
 
           assert.equal(userBalance, 1);
           assert.equal(owner, userAddress);
@@ -185,39 +171,36 @@ const { assert, expect } = require("chai");
         let quantity, value;
 
         beforeEach(async () => {
-          const price = await roboPunksNft.getPublicMintPrice();
+          const price = await DinoPunks.getPublicMintPrice();
           quantity = 1;
           value = price.mul(quantity);
         });
 
         it("reverts if public mint is not open", async () => {
           await expect(
-            roboPunksNft.publicMint(quantity, { value: value })
+            DinoPunks.publicMint(quantity, { value: value })
           ).to.be.revertedWith("public mint not enabled");
         });
 
         it("reverts if wrong mint value added", async () => {
-          const txResponse = await roboPunksNft.changeNftMintState(true, false);
+          const txResponse = await DinoPunks.changeNftMintState(true, false);
           await txResponse.wait(1);
 
           await expect(
-            roboPunksNft.publicMint(2, { value: value })
+            DinoPunks.publicMint(2, { value: value })
           ).to.be.revertedWith("wrong mint value");
         });
 
         it("allows public users to mint nft", async () => {
-          const txResponse1 = await roboPunksNft.changeNftMintState(
-            true,
-            false
-          );
+          const txResponse1 = await DinoPunks.changeNftMintState(true, false);
           await txResponse1.wait(1);
-          const txResponse2 = await roboPunksNft.publicMint(quantity, {
+          const txResponse2 = await DinoPunks.publicMint(quantity, {
             value: value,
           });
           await txResponse2.wait(1);
           const userAddress = deployer.address;
-          const userBalance = await roboPunksNft.balanceOf(userAddress);
-          const owner = await roboPunksNft.ownerOf(1);
+          const userBalance = await DinoPunks.balanceOf(userAddress);
+          const owner = await DinoPunks.ownerOf(1);
 
           assert.equal(userBalance, 1);
           assert.equal(owner, userAddress);
@@ -228,57 +211,58 @@ const { assert, expect } = require("chai");
         let quantity, value;
 
         beforeEach(async () => {
-          const price = await roboPunksNft.getPublicMintPrice();
+          const price = await DinoPunks.getPublicMintPrice();
           quantity = 1;
           value = price.mul(quantity);
-          const txResponse = await roboPunksNft.changeNftMintState(true, false);
+          const txResponse = await DinoPunks.changeNftMintState(true, false);
           await txResponse.wait(1);
         });
 
         it("reverts if we sold out", async () => {
           const accounts = await ethers.getSigners();
-          const maxSupply = await roboPunksNft.getMaxSupply();
+          const maxSupply = await DinoPunks.getMaxSupply();
 
           for (let i = 0; i < maxSupply; i++) {
             const mintAccount = accounts[i];
-            const txResponse = await roboPunksNft
-              .connect(mintAccount)
-              .publicMint(quantity, {
+            const txResponse = await DinoPunks.connect(mintAccount).publicMint(
+              quantity,
+              {
                 value: value,
-              });
+              }
+            );
             await txResponse.wait(1);
           }
 
           await expect(
-            roboPunksNft.publicMint(quantity, { value: value })
+            DinoPunks.publicMint(quantity, { value: value })
           ).to.be.revertedWith("we sold out");
         });
 
         it("reverts if exceed's max wallet limit", async () => {
           for (let i = 0; i < 2; i++) {
-            const txResponse = await roboPunksNft.publicMint(quantity, {
+            const txResponse = await DinoPunks.publicMint(quantity, {
               value: value,
             });
             await txResponse.wait(1);
           }
 
           await expect(
-            roboPunksNft.publicMint(quantity, { value: value })
+            DinoPunks.publicMint(quantity, { value: value })
           ).to.be.revertedWith("exceeded max wallet limit");
         });
 
         it("mints nft and updates accordingly", async () => {
-          const txResponse = await roboPunksNft.publicMint(quantity, {
+          const txResponse = await DinoPunks.publicMint(quantity, {
             value: value,
           });
           await txResponse.wait(1);
-          const totalSupply = await roboPunksNft.getTotalSupply();
-          const walletMints = await roboPunksNft.getYourWalletMints(
+          const totalSupply = await DinoPunks.getTotalSupply();
+          const walletMints = await DinoPunks.getYourWalletMints(
             deployer.address
           );
           const userAddress = deployer.address;
-          const userBalance = await roboPunksNft.balanceOf(userAddress);
-          const owner = await roboPunksNft.ownerOf(1);
+          const userBalance = await DinoPunks.balanceOf(userAddress);
+          const owner = await DinoPunks.ownerOf(1);
 
           assert.equal(totalSupply, 1);
           assert.equal(walletMints, 1);
@@ -291,22 +275,19 @@ const { assert, expect } = require("chai");
         let quantity, value;
 
         beforeEach(async () => {
-          const price = await roboPunksNft.getPublicMintPrice();
+          const price = await DinoPunks.getPublicMintPrice();
           quantity = 1;
           value = price.mul(quantity);
-          const txResponse1 = await roboPunksNft.changeNftMintState(
-            true,
-            false
-          );
+          const txResponse1 = await DinoPunks.changeNftMintState(true, false);
           await txResponse1.wait(1);
-          const txResponse2 = await roboPunksNft.publicMint(quantity, {
+          const txResponse2 = await DinoPunks.publicMint(quantity, {
             value: value,
           });
           await txResponse2.wait(1);
         });
 
         it("returns base uri if reveal is off", async () => {
-          const baseURI = await roboPunksNft.tokenURI(1);
+          const baseURI = await DinoPunks.tokenURI(1);
 
           assert.equal(
             baseURI.toString(),
@@ -315,9 +296,9 @@ const { assert, expect } = require("chai");
         });
 
         it("returns token uri", async () => {
-          const txResponse = await roboPunksNft.isRevealed(true);
+          const txResponse = await DinoPunks.isRevealed(true);
           await txResponse.wait(1);
-          const tokenURI = await roboPunksNft.tokenURI(1);
+          const tokenURI = await DinoPunks.tokenURI(1);
 
           assert.equal(
             tokenURI.toString(),
@@ -330,20 +311,18 @@ const { assert, expect } = require("chai");
         let quantity, value;
 
         beforeEach(async () => {
-          const price = await roboPunksNft.getPublicMintPrice();
+          const price = await DinoPunks.getPublicMintPrice();
           quantity = 1;
           value = price.mul(quantity);
-          const txResponse1 = await roboPunksNft.changeNftMintState(
-            true,
-            false
-          );
+          const txResponse1 = await DinoPunks.changeNftMintState(true, false);
           await txResponse1.wait(1);
           const accounts = await ethers.getSigners();
-          const txResponse2 = await roboPunksNft
-            .connect(accounts[1])
-            .publicMint(quantity, {
+          const txResponse2 = await DinoPunks.connect(accounts[1]).publicMint(
+            quantity,
+            {
               value: value,
-            });
+            }
+          );
           await txResponse2.wait(1);
         });
 
@@ -352,22 +331,22 @@ const { assert, expect } = require("chai");
           const nonowner = accounts[2];
 
           await expect(
-            roboPunksNft.connect(nonowner).withdraw()
+            DinoPunks.connect(nonowner).withdraw()
           ).to.be.revertedWith("Ownable: caller is not the owner");
         });
 
         it("successfully withdraws", async () => {
           const initialBalance = await ethers.provider.getBalance(
-            roboPunksNft.address
+            DinoPunks.address
           );
           const initialOwnerBalance = await ethers.provider.getBalance(
             deployer.address
           );
-          const tx = await roboPunksNft.withdraw();
+          const tx = await DinoPunks.withdraw();
           const receipt = await tx.wait();
           const gasCost = receipt.gasUsed.mul(tx.gasPrice);
           const finalBalance = await ethers.provider.getBalance(
-            roboPunksNft.address
+            DinoPunks.address
           );
           const finalOwnerBalance = await ethers.provider.getBalance(
             deployer.address

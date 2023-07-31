@@ -1,5 +1,5 @@
 {
-  "name": "pixel-beanz-front-end",
+  "name": "portfolio-project-front-end",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
-    "eslint": "8.45.0",
+    "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
     "postcss": "8.4.27",

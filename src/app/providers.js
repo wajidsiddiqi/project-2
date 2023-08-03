@@ -11,6 +11,8 @@ import {
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import React, { useState, useEffect } from 'react';
+import { CacheProvider } from '@chakra-ui/next-js';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const { chains, publicClient } = configureChains(
     [polygon],
@@ -39,7 +41,11 @@ export function Providers({ children }) {
     return (
         <WagmiConfig config={wagmiConfig}>
             <RainbowKitProvider chains={chains}>
-                {mounted && children}
+                <CacheProvider>
+                    <ChakraProvider>
+                        {mounted && children}
+                    </ChakraProvider>
+                </CacheProvider>
             </RainbowKitProvider>
         </WagmiConfig>
     );

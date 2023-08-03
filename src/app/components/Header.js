@@ -59,8 +59,11 @@ export default function Header() {
         <CenterSpaceAround
           style={{ borderRadius: "5rem", backgroundColor: "#c62f42" }}
         >
+          <NavLink>Home</NavLink>
           <NavLink>About</NavLink>
-          <NavLink>Contact</NavLink>
+          <NavLink>Roadmap</NavLink>
+          <NavLink>Art</NavLink>
+          <NavLink>Team</NavLink>
         </CenterSpaceAround>
 
         <ConnectButton>Connect</ConnectButton>

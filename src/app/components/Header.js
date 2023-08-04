@@ -1,19 +1,9 @@
-/*import { ConnectButton } from '@rainbow-me/rainbowkit';
-<div
-  style={{
-    display: 'flex',
-    justifyContent: 'flex-end',
-    padding: 12,
-  }}
->
-  <ConnectButton />
-</div>
-*/
 "use client";
 import React from "react";
 import styled from "styled-components";
 import logo from "../Assets/logo.png";
 import Image from "next/image";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Center = styled.div`
   display: flex;
@@ -26,20 +16,10 @@ const CenterSpaceAround = styled(Center)`
 `;
 
 const NavLink = styled.ul`
-  padding: 0.4rem 1rem;
+  padding: 0.7rem 1rem;
   text-decoration: none;
   color: #eef3f1;
   cursor: pointer;
-  margin: 0.5rem;
-`;
-
-const ConnectButton = styled.button`
-  color: #eef3f1;
-  background-color: #c62f42;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 5rem;
 `;
 
 const StyledNav = styled.nav`
@@ -66,7 +46,7 @@ export default function Header() {
           <NavLink>Team</NavLink>
         </CenterSpaceAround>
 
-        <ConnectButton>Connect</ConnectButton>
+        <ConnectButton />
       </CenterSpaceAround>
     </StyledNav>
   );

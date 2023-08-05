@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "04b30";
+  src: url("../fonts/my-font.woff2"), url("../fonts/my-font.woff"),
+    url("../fonts/my-font.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom-font {
+  font-family: "04b30", sans-serif;
+}

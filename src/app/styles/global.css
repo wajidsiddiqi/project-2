@@ -9,3 +9,7 @@
 body {
   font-family: "DotGothic16", sans-serif;
 }
+
+img {
+  display: block;
+}

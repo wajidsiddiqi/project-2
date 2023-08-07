@@ -1,9 +1,12 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import logo from "../Assets/logo.png";
+import Logo from "../Assets/logo.png";
 import Image from "next/image";
 import { ConnectKitButton } from "connectkit";
+import Opensea from "../Assets/icons/opensea.svg";
+import Discord from "../Assets/icons/discord.svg";
+import Link from "next/link";
 
 const Center = styled.div`
   display: flex;
@@ -20,21 +23,31 @@ const CenterSpaceBetween = styled(Center)`
 `;
 
 const NavLink = styled.ul`
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 0rem;
   text-decoration: none;
   color: #eef3f1;
   cursor: pointer;
   font-size: 1.2rem;
 `;
 
+const NavLinkForIcon = styled.ul`
+  padding: 0rem 0.7rem;
+  text-decoration: none;
+`;
+
 const NavLinkText = styled.span`
+  padding: 0.7rem 1rem;
+  border-radius: 5rem;
+  transition: background-color 0.3s, color 0.3s;
+
   &:hover {
-    border-bottom: 2px solid #eef3f1;
+    background-color: #eef3f1;
+    color: #c62f42;
   }
 `;
 
 const StyledConnectButton = styled.button`
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1.4rem;
   color: #eef3f1;
   cursor: pointer;
   border-radius: 5rem;
@@ -42,6 +55,12 @@ const StyledConnectButton = styled.button`
   background-color: #c62f42;
   border: none;
   font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #eef3f1;
+    color: #c62f42;
+  }
 `;
 
 const StyledNav = styled.nav`
@@ -57,9 +76,7 @@ export default function Header() {
   return (
     <StyledNav>
       <CenterSpaceBetween>
-        <Center>
-          <Image src={logo} width={"auto"} height={55} alt="Logo" />
-        </Center>
+        <Image src={Logo} width={"auto"} height={65} alt="Logo" />
 
         <CenterSpaceAround
           style={{ borderRadius: "5rem", backgroundColor: "#c62f42" }}
@@ -79,6 +96,17 @@ export default function Header() {
           <NavLink>
             <NavLinkText>Team</NavLinkText>
           </NavLink>
+
+          <NavLinkForIcon>
+            <Link href="http://opensea.com">
+              <Image src={Opensea} width={"auto"} height={36} alt="Opensea" />
+            </Link>
+          </NavLinkForIcon>
+          <NavLinkForIcon>
+            <Link href="http://discord.com">
+              <Image src={Discord} width={"auto"} height={36} alt="Discord" />
+            </Link>
+          </NavLinkForIcon>
         </CenterSpaceAround>
 
         <ConnectKitButton.Custom>

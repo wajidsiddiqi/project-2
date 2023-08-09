@@ -42,7 +42,7 @@ const NavLinkText = styled.span`
 
   &:hover {
     background-color: #eef3f1;
-    color: #c62f42;
+    color: #a474c6;
   }
 `;
 
@@ -52,14 +52,15 @@ const StyledConnectButton = styled.button`
   cursor: pointer;
   border-radius: 5rem;
   font-family: inherit;
-  background-color: #c62f42;
+  background-color: #a474c6;
   border: none;
   font-size: 1.2rem;
   transition: background-color 0.3s, color 0.3s;
+  box-shadow: black 0px 3px;
 
   &:hover {
     background-color: #eef3f1;
-    color: #c62f42;
+    color: #a474c6;
   }
 `;
 
@@ -70,6 +71,7 @@ const StyledNav = styled.nav`
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
   padding: 0.5rem 2.5rem;
+  z-index: 98;
 `;
 
 export default function Header() {
@@ -79,7 +81,11 @@ export default function Header() {
         <Image src={Logo} width={"auto"} height={65} alt="Logo" />
 
         <CenterSpaceAround
-          style={{ borderRadius: "5rem", backgroundColor: "#c62f42" }}
+          style={{
+            borderRadius: "5rem",
+            backgroundColor: "#a474c6",
+            boxShadow: "black 0px 3px",
+          }}
         >
           <NavLink>
             <NavLinkText>Home</NavLinkText>

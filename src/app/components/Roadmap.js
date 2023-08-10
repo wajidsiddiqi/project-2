@@ -189,7 +189,7 @@ const Timeline = ({ setObserver, callback }) => {
           1
         </Circle>
         <RightBox>
-          <Fade bottom>{message4}</Fade>
+          <Fade bottom>{message1}</Fade>
         </RightBox>
       </CircleWrapper>
       <TimelineBar id="timeline2" ref={timeline2} />
@@ -198,7 +198,7 @@ const Timeline = ({ setObserver, callback }) => {
           2
         </Circle>
         <LeftBox>
-          <Fade bottom>{message4}</Fade>
+          <Fade bottom>{message2}</Fade>
         </LeftBox>
       </CircleWrapper>
       <TimelineBar id="timeline3" ref={timeline3} />
@@ -207,7 +207,7 @@ const Timeline = ({ setObserver, callback }) => {
           3
         </Circle>
         <RightBox>
-          <Fade bottom>{message4}</Fade>
+          <Fade bottom>{message3}</Fade>
         </RightBox>
       </CircleWrapper>
       <TimelineBar id="timeline4" ref={timeline4} />
@@ -244,7 +244,7 @@ export default function Roadmap() {
           />
         )}
       />
-      <div className="stub2">{message}</div>
+      <div style={{ width: "800px" }}>{message}</div>
     </PageWrapper>
   );
 }

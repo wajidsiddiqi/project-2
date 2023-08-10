@@ -14,3 +14,20 @@ body {
 img {
   display: block;
 }
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #eef3f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #56326d;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #a474c6;
+}

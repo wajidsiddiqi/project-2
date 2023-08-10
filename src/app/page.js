@@ -12,6 +12,7 @@ import bg7 from "./Assets/bg/bg7.png";
 import bg8 from "./Assets/bg/bg8.png";
 
 import "./styles/custom-font.css";
+import Roadmap from "./components/Roadmap";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -21,7 +22,7 @@ const PageWrapper = styled.div`
   align-items: center;
   overflow: hidden;
   background-color: #eef3f1;
-  position: absolute;
+  position: relative;
   top: 0;
 `;
 
@@ -72,6 +73,13 @@ const StyledButton = styled.button`
   }
 `;
 
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+`;
+
 export default function Home() {
   const parallax = (e) => {
     document.querySelectorAll(".object").forEach((move) => {
@@ -90,112 +98,115 @@ export default function Home() {
   }, []);
 
   return (
-    <PageWrapper>
-      <TextWrapper>
-        <H1Title>Beanz Pixel</H1Title>
-        <Para>
-          Beanz Pixel is a collection of
-          <br />
-          10,000 unique pixel art
-        </Para>
-        <StyledButton>Mint Now</StyledButton>
-      </TextWrapper>
-      <Image
-        style={{
-          ...bgImageStyle,
-          top: "260px",
-          left: "220px",
-          height: "12rem",
-        }}
-        src={bg1}
-        className="object"
-        data-value="-2"
-        alt=""
-      />
-      <Image
-        style={{
-          ...bgImageStyle,
-          top: "-260px",
-          left: "5px",
-          height: "12rem",
-        }}
-        src={bg2}
-        className="object"
-        data-value="6"
-        alt=""
-      />
-      <Image
-        style={{
-          ...bgImageStyle,
-          top: "-250px",
-          right: "-700px",
-          height: "13rem",
-        }}
-        src={bg3}
-        className="object"
-        data-value="-5"
-        alt=""
-      />
-      <Image
-        style={{
-          ...bgImageStyle,
-          top: "260px",
-          right: "-45px",
-          height: "11rem",
-        }}
-        src={bg4}
-        className="object"
-        data-value="-6"
-        alt=""
-      />
-      <Image
-        style={{
-          ...bgImageStyle,
-          bottom: "-225px",
-          left: "325px",
-          height: "13rem",
-        }}
-        src={bg5}
-        className="object"
-        data-value="8"
-        alt=""
-      />
-      <Image
-        style={{
-          ...bgImageStyle,
-          bottom: "0",
-          left: "300px",
-          height: "10rem",
-        }}
-        src={bg6}
-        className="object"
-        data-value="-4"
-        alt=""
-      />
-      <Image
-        style={{
-          ...bgImageStyle,
-          bottom: "0",
-          right: "1040px",
-          height: "12rem",
-        }}
-        src={bg7}
-        className="object"
-        data-value="5"
-        alt=""
-      />
-      <Image
-        style={{
-          ...bgImageStyle,
-          bottom: "240px",
-          right: "630px",
-          height: "10rem",
-        }}
-        src={bg8}
-        className="object"
-        data-value="-9"
-        alt=""
-      />
-    </PageWrapper>
+    <Wrapper>
+      <PageWrapper>
+        <TextWrapper>
+          <H1Title>Beanz Pixel</H1Title>
+          <Para>
+            Beanz Pixel is a collection of
+            <br />
+            10,000 unique pixel art
+          </Para>
+          <StyledButton>Mint Now</StyledButton>
+        </TextWrapper>
+        <Image
+          style={{
+            ...bgImageStyle,
+            top: "260px",
+            left: "220px",
+            height: "12rem",
+          }}
+          src={bg1}
+          className="object"
+          data-value="-2"
+          alt=""
+        />
+        <Image
+          style={{
+            ...bgImageStyle,
+            top: "-260px",
+            left: "5px",
+            height: "12rem",
+          }}
+          src={bg2}
+          className="object"
+          data-value="6"
+          alt=""
+        />
+        <Image
+          style={{
+            ...bgImageStyle,
+            top: "-250px",
+            right: "-700px",
+            height: "13rem",
+          }}
+          src={bg3}
+          className="object"
+          data-value="-5"
+          alt=""
+        />
+        <Image
+          style={{
+            ...bgImageStyle,
+            top: "260px",
+            right: "-45px",
+            height: "11rem",
+          }}
+          src={bg4}
+          className="object"
+          data-value="-6"
+          alt=""
+        />
+        <Image
+          style={{
+            ...bgImageStyle,
+            bottom: "-225px",
+            left: "325px",
+            height: "13rem",
+          }}
+          src={bg5}
+          className="object"
+          data-value="8"
+          alt=""
+        />
+        <Image
+          style={{
+            ...bgImageStyle,
+            bottom: "0",
+            left: "300px",
+            height: "10rem",
+          }}
+          src={bg6}
+          className="object"
+          data-value="-4"
+          alt=""
+        />
+        <Image
+          style={{
+            ...bgImageStyle,
+            bottom: "0",
+            right: "1040px",
+            height: "12rem",
+          }}
+          src={bg7}
+          className="object"
+          data-value="5"
+          alt=""
+        />
+        <Image
+          style={{
+            ...bgImageStyle,
+            bottom: "240px",
+            right: "630px",
+            height: "10rem",
+          }}
+          src={bg8}
+          className="object"
+          data-value="-9"
+          alt=""
+        />
+      </PageWrapper>
+      <Roadmap />
+    </Wrapper>
   );
 }

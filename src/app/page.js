@@ -2,17 +2,10 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import bg1 from "./Assets/bg/bg1.png";
-import bg2 from "./Assets/bg/bg2.png";
-import bg3 from "./Assets/bg/bg3.png";
-import bg4 from "./Assets/bg/bg4.png";
-import bg5 from "./Assets/bg/bg5.png";
-import bg6 from "./Assets/bg/bg6.png";
-import bg7 from "./Assets/bg/bg7.png";
-import bg8 from "./Assets/bg/bg8.png";
 
 import "./styles/custom-font.css";
 import Roadmap from "./components/Roadmap";
+import Art from "./components/Art";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -33,7 +26,6 @@ const TextWrapper = styled.div`
 
 const bgImageStyle = {
   position: "relative",
-  width: "auto",
   objectFit: "contain",
 };
 
@@ -114,9 +106,10 @@ export default function Home() {
             ...bgImageStyle,
             top: "260px",
             left: "220px",
-            height: "12rem",
           }}
-          src={bg1}
+          src="/assets/bg/bg1.png"
+          height="192"
+          width="192"
           className="object"
           data-value="-2"
           alt=""
@@ -126,9 +119,10 @@ export default function Home() {
             ...bgImageStyle,
             top: "-260px",
             left: "5px",
-            height: "12rem",
           }}
-          src={bg2}
+          src="/assets/bg/bg2.png"
+          height="192"
+          width="192"
           className="object"
           data-value="6"
           alt=""
@@ -138,9 +132,10 @@ export default function Home() {
             ...bgImageStyle,
             top: "-250px",
             right: "-700px",
-            height: "13rem",
           }}
-          src={bg3}
+          src="/assets/bg/bg3.png"
+          height="208"
+          width="208"
           className="object"
           data-value="-5"
           alt=""
@@ -150,9 +145,10 @@ export default function Home() {
             ...bgImageStyle,
             top: "260px",
             right: "-45px",
-            height: "11rem",
           }}
-          src={bg4}
+          src="/assets/bg/bg4.png"
+          height="176"
+          width="176"
           className="object"
           data-value="-6"
           alt=""
@@ -162,9 +158,10 @@ export default function Home() {
             ...bgImageStyle,
             bottom: "-225px",
             left: "325px",
-            height: "13rem",
           }}
-          src={bg5}
+          src="/assets/bg/bg5.png"
+          height="208"
+          width="208"
           className="object"
           data-value="8"
           alt=""
@@ -174,9 +171,10 @@ export default function Home() {
             ...bgImageStyle,
             bottom: "0",
             left: "300px",
-            height: "10rem",
           }}
-          src={bg6}
+          src="/assets/bg/bg6.png"
+          height="160"
+          width="160"
           className="object"
           data-value="-4"
           alt=""
@@ -186,9 +184,10 @@ export default function Home() {
             ...bgImageStyle,
             bottom: "0",
             right: "1040px",
-            height: "12rem",
           }}
-          src={bg7}
+          src="/assets/bg/bg7.png"
+          height="192"
+          width="192"
           className="object"
           data-value="5"
           alt=""
@@ -198,15 +197,17 @@ export default function Home() {
             ...bgImageStyle,
             bottom: "240px",
             right: "630px",
-            height: "10rem",
           }}
-          src={bg8}
+          src="/assets/bg/bg8.png"
+          height="160"
+          width="160"
           className="object"
           data-value="-9"
           alt=""
         />
       </PageWrapper>
       <Roadmap />
+      <Art />
     </Wrapper>
   );
 }

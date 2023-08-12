@@ -1,11 +1,8 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import Logo from "../Assets/logo.png";
 import Image from "next/image";
 import { ConnectKitButton } from "connectkit";
-import Opensea from "../Assets/icons/opensea.svg";
-import Discord from "../Assets/icons/discord.svg";
 import Link from "next/link";
 
 const Center = styled.div`
@@ -78,7 +75,7 @@ export default function Header() {
   return (
     <StyledNav>
       <CenterSpaceBetween>
-        <Image src={Logo} width={"auto"} height={65} alt="Logo" />
+        <Image src="/assets/logo.png" width="65" height="65" alt="Logo" />
 
         <CenterSpaceAround
           style={{
@@ -89,9 +86,6 @@ export default function Header() {
         >
           <NavLink>
             <NavLinkText>Home</NavLinkText>
-          </NavLink>
-          <NavLink>
-            <NavLinkText>About</NavLinkText>
           </NavLink>
           <NavLink>
             <NavLinkText>Roadmap</NavLinkText>
@@ -105,12 +99,22 @@ export default function Header() {
 
           <NavLinkForIcon>
             <Link href="http://opensea.com">
-              <Image src={Opensea} width={"auto"} height={36} alt="Opensea" />
+              <Image
+                src="/assets/icons/opensea.svg"
+                width="36"
+                height="36"
+                alt="Opensea"
+              />
             </Link>
           </NavLinkForIcon>
           <NavLinkForIcon>
             <Link href="http://discord.com">
-              <Image src={Discord} width={"auto"} height={36} alt="Discord" />
+              <Image
+                src="/assets/icons/discord.svg"
+                width="36"
+                height="36"
+                alt="Discord"
+              />
             </Link>
           </NavLinkForIcon>
         </CenterSpaceAround>

@@ -12,6 +12,11 @@ const Wrapper = styled.div`
 const PageWrapper = styled.div`
   background-color: #a474c6;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 20px 20px 20px;
 `;
 
 const TimelineBar = styled.div`
@@ -244,7 +249,7 @@ export default function Roadmap() {
           />
         )}
       />
-      <div style={{ width: "800px" }}>{message}</div>
+      <div style={{ height: "800px" }}>{message}</div>
     </PageWrapper>
   );
 }

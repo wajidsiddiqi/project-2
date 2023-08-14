@@ -16,17 +16,19 @@ const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0px 20px 20px 20px;
+  padding: 0rem 2rem 6.5rem 2rem;
 `;
 
 const TimelineBar = styled.div`
   height: 300px;
   width: 6.5px;
-  background-color: none;
+  position: relative;
 `;
 
 const FirstTimelineBar = styled(TimelineBar)`
   height: 50px;
+  position: relative;
+  top: 0px;
 `;
 
 const Circle = styled.div`
@@ -38,17 +40,12 @@ const Circle = styled.div`
   justify-content: center;
   color: #a474c6;
   border-radius: 50%;
-  background-color: none;
-`;
-
-const CircleWrapper = styled.div`
   position: relative;
 `;
 
 const RightBox = styled.div`
-  position: absolute;
-  top: 20%;
-  left: 200%;
+  position: relative;
+  left: 60%;
   background-color: #eef3f1;
   padding: 2rem;
   box-shadow: black 0px 3px;
@@ -63,9 +60,8 @@ const RightBox = styled.div`
 
 const LeftBox = styled(RightBox)`
   border-radius: 5rem 0rem 5rem 5rem;
-  position: absolute;
-  top: 20%;
-  right: 200%;
+  position: relative;
+  right: 60%;
   left: auto;
 `;
 
@@ -114,13 +110,15 @@ const Timeline = ({ setObserver, callback }) => {
     setMessage1(() => {
       return (
         <div>
-          <H2Title>Phase 1</H2Title>
-          <Para>
-            Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt quo
-            cumque laboriosam sit quos tenetur. Aut voluptatem possimus eum
-            explicabo debitis nam eius debitis. Et suscipit laborum et nulla
-            consequuntur ea dolore repellat.
-          </Para>
+          <Fade bottom>
+            <H2Title>Phase 1</H2Title>
+            <Para>
+              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
+              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
+              eum explicabo debitis nam eius debitis. Et suscipit laborum et
+              nulla consequuntur ea dolore repellat.
+            </Para>
+          </Fade>
         </div>
       );
     });
@@ -131,13 +129,15 @@ const Timeline = ({ setObserver, callback }) => {
     setMessage2(() => {
       return (
         <div>
-          <H2Title>Phase 2</H2Title>
-          <Para>
-            Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt quo
-            cumque laboriosam sit quos tenetur. Aut voluptatem possimus eum
-            explicabo debitis nam eius debitis. Et suscipit laborum et nulla
-            consequuntur ea dolore repellat.
-          </Para>
+          <Fade bottom>
+            <H2Title>Phase 2</H2Title>
+            <Para>
+              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
+              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
+              eum explicabo debitis nam eius debitis. Et suscipit laborum et
+              nulla consequuntur ea dolore repellat.
+            </Para>
+          </Fade>
         </div>
       );
     });
@@ -147,13 +147,15 @@ const Timeline = ({ setObserver, callback }) => {
     setMessage3(() => {
       return (
         <div>
-          <H2Title>Phase 3</H2Title>
-          <Para>
-            Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt quo
-            cumque laboriosam sit quos tenetur. Aut voluptatem possimus eum
-            explicabo debitis nam eius debitis. Et suscipit laborum et nulla
-            consequuntur ea dolore repellat.
-          </Para>
+          <Fade bottom>
+            <H2Title>Phase 3</H2Title>
+            <Para>
+              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
+              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
+              eum explicabo debitis nam eius debitis. Et suscipit laborum et
+              nulla consequuntur ea dolore repellat.
+            </Para>
+          </Fade>
         </div>
       );
     });
@@ -163,13 +165,15 @@ const Timeline = ({ setObserver, callback }) => {
     setMessage4(() => {
       return (
         <div>
-          <H2Title>Phase 4</H2Title>
-          <Para>
-            Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt quo
-            cumque laboriosam sit quos tenetur. Aut voluptatem possimus eum
-            explicabo debitis nam eius debitis. Et suscipit laborum et nulla
-            consequuntur ea dolore repellat.
-          </Para>
+          <Fade bottom>
+            <H2Title>Phase 4</H2Title>
+            <Para>
+              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
+              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
+              eum explicabo debitis nam eius debitis. Et suscipit laborum et
+              nulla consequuntur ea dolore repellat.
+            </Para>
+          </Fade>
         </div>
       );
     });
@@ -189,41 +193,58 @@ const Timeline = ({ setObserver, callback }) => {
   return (
     <Wrapper>
       <FirstTimelineBar id="timeline1" ref={timeline1} />
-      <CircleWrapper>
-        <Circle id="circle1" ref={circle1}>
-          1
-        </Circle>
-        <RightBox>
-          <Fade bottom>{message1}</Fade>
-        </RightBox>
-      </CircleWrapper>
-      <TimelineBar id="timeline2" ref={timeline2} />
-      <CircleWrapper>
-        <Circle id="circle2" ref={circle2}>
-          2
-        </Circle>
-        <LeftBox>
-          <Fade bottom>{message2}</Fade>
-        </LeftBox>
-      </CircleWrapper>
-      <TimelineBar id="timeline3" ref={timeline3} />
-      <CircleWrapper>
-        <Circle id="circle3" ref={circle3}>
-          3
-        </Circle>
-        <RightBox>
-          <Fade bottom>{message3}</Fade>
-        </RightBox>
-      </CircleWrapper>
-      <TimelineBar id="timeline4" ref={timeline4} />
-      <CircleWrapper>
-        <Circle id="circle4" ref={circle4}>
-          4
-        </Circle>
-        <LeftBox>
-          <Fade bottom>{message4}</Fade>
-        </LeftBox>
-      </CircleWrapper>
+      <Circle id="circle1" ref={circle1} style={{ top: "0px" }}>
+        1
+      </Circle>
+      <RightBox style={{ top: "-35px" }}>{message1}</RightBox>
+
+      <TimelineBar
+        id="timeline2"
+        ref={timeline2}
+        style={{
+          top: "-345px",
+        }}
+      />
+      <Circle id="circle2" ref={circle2} style={{ top: "-345px" }}>
+        2
+      </Circle>
+      <LeftBox style={{ top: "-380px" }}>{message2}</LeftBox>
+
+      <TimelineBar
+        id="timeline3"
+        ref={timeline3}
+        style={{
+          top: "-690px",
+        }}
+      />
+      <Circle
+        id="circle3"
+        ref={circle3}
+        style={{
+          top: "-690px",
+        }}
+      >
+        3
+      </Circle>
+      <RightBox style={{ top: "-723px" }}>{message3}</RightBox>
+
+      <TimelineBar
+        id="timeline4"
+        ref={timeline4}
+        style={{
+          top: "-1035px",
+        }}
+      />
+      <Circle
+        id="circle4"
+        ref={circle4}
+        style={{
+          top: "-1035px",
+        }}
+      >
+        4
+      </Circle>
+      <LeftBox style={{ top: "-1066px" }}>{message4}</LeftBox>
     </Wrapper>
   );
 };
@@ -249,7 +270,6 @@ export default function Roadmap() {
           />
         )}
       />
-      <div style={{ height: "800px" }}>{message}</div>
     </PageWrapper>
   );
 }

@@ -75,7 +75,7 @@ export default function Header() {
   return (
     <StyledNav>
       <CenterSpaceBetween>
-        <Image src="/assets/logo.png" width="65" height="65" alt="Logo" />
+        <Image src="/assets/logo.png" width="50" height="60" alt="Logo" />
 
         <CenterSpaceAround
           style={{

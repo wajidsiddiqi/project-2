@@ -5,8 +5,8 @@ import Fade from "react-reveal/Fade";
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 const PageWrapper = styled.div`
@@ -17,6 +17,7 @@ const PageWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 0rem 2rem 6.5rem 2rem;
+  overflow: hidden;
 `;
 
 const TimelineBar = styled.div`
@@ -44,7 +45,6 @@ const Circle = styled.div`
 `;
 
 const RightBox = styled.div`
-  position: absolute;
   background-color: #eef3f1;
   padding: 2rem;
   box-shadow: black 0px 3px;
@@ -55,13 +55,10 @@ const RightBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  right: 60px;
 `;
 
 const LeftBox = styled(RightBox)`
   border-radius: 5rem 0rem 5rem 5rem;
-  position: absolute;
-  left: 60px;
 `;
 
 const H1Title = styled.h1`
@@ -95,14 +92,12 @@ const CircleAndTimelineContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: relative;
 `;
 
 const BoxContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   position: relative;
 `;
 
@@ -110,6 +105,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
 `;
 
 const Timeline = ({ setObserver, callback }) => {
@@ -215,48 +211,51 @@ const Timeline = ({ setObserver, callback }) => {
 
   return (
     <Wrapper>
-      <CircleAndTimelineContainer>
-        <FirstTimelineBar id="timeline1" ref={timeline1} />
-        <Circle id="circle1" ref={circle1}>
-          1
-        </Circle>
-      </CircleAndTimelineContainer>
-      {/* <RightBox style={{ top: "332px" }}>{message1}</RightBox> */}
+      <Container>
+        {/* left side boxs */}
+        <BoxContainer style={{ flexDirection: "column" }}>
+          <BoxContainer style={{ top: "36px" }}>
+            <LeftBox>{message2}</LeftBox>
+          </BoxContainer>
+          <BoxContainer style={{ top: "391px" }}>
+            <LeftBox>{message4}</LeftBox>
+          </BoxContainer>
+        </BoxContainer>
 
-      <CircleAndTimelineContainer>
-        <TimelineBar id="timeline2" ref={timeline2} />
-        <Circle id="circle2" ref={circle2}>
-          2
-        </Circle>
-      </CircleAndTimelineContainer>
-      {/* <LeftBox style={{ top: "681px" }}>{message2}</LeftBox> */}
+        <CircleAndTimelineContainer>
+          <FirstTimelineBar id="timeline1" ref={timeline1} />
+          <Circle id="circle1" ref={circle1}>
+            1
+          </Circle>
 
-      <CircleAndTimelineContainer>
-        <TimelineBar id="timeline3" ref={timeline3} />
-        <Circle id="circle3" ref={circle3}>
-          3
-        </Circle>
-      </CircleAndTimelineContainer>
-      {/* <RightBox style={{ top: "1032px" }}>{message3}</RightBox> */}
+          <TimelineBar id="timeline2" ref={timeline2} />
+          <Circle id="circle2" ref={circle2}>
+            2
+          </Circle>
 
-      <CircleAndTimelineContainer>
-        <TimelineBar id="timeline4" ref={timeline4} />
-        <Circle id="circle4" ref={circle4}>
-          4
-        </Circle>
-      </CircleAndTimelineContainer>
-      {/* <LeftBox style={{ top: "1381px" }}>{message4}</LeftBox> */}
+          <TimelineBar id="timeline3" ref={timeline3} />
+          <Circle id="circle3" ref={circle3}>
+            3
+          </Circle>
 
-      <CircleAndTimelineContainer>
-        <TimelineBar id="timeline5" ref={timeline5} />
-      </CircleAndTimelineContainer>
+          <TimelineBar id="timeline4" ref={timeline4} />
+          <Circle id="circle4" ref={circle4}>
+            4
+          </Circle>
 
-      <BoxContainer>
-        <RightBox>{message1}</RightBox>
-        <LeftBox>{message2}</LeftBox>
-        <RightBox>{message3}</RightBox>
-        <LeftBox>{message4}</LeftBox>
-      </BoxContainer>
+          <TimelineBar id="timeline5" ref={timeline5} />
+        </CircleAndTimelineContainer>
+
+        {/* right side boxs */}
+        <BoxContainer style={{ flexDirection: "column" }}>
+          <BoxContainer style={{ top: "-314px" }}>
+            <RightBox>{message1}</RightBox>
+          </BoxContainer>
+          <BoxContainer>
+            <RightBox style={{ top: "41px" }}>{message3}</RightBox>
+          </BoxContainer>
+        </BoxContainer>
+      </Container>
     </Wrapper>
   );
 };

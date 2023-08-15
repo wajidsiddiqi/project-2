@@ -44,8 +44,7 @@ const Circle = styled.div`
 `;
 
 const RightBox = styled.div`
-  position: relative;
-  left: 60%;
+  position: absolute;
   background-color: #eef3f1;
   padding: 2rem;
   box-shadow: black 0px 3px;
@@ -56,13 +55,13 @@ const RightBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  right: 60px;
 `;
 
 const LeftBox = styled(RightBox)`
   border-radius: 5rem 0rem 5rem 5rem;
-  position: relative;
-  right: 60%;
-  left: auto;
+  position: absolute;
+  left: 60px;
 `;
 
 const H1Title = styled.h1`
@@ -91,6 +90,28 @@ const Para = styled.p`
   text-shadow: black 0px 1px;
 `;
 
+const CircleAndTimelineContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+`;
+
+const BoxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+`;
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Timeline = ({ setObserver, callback }) => {
   const [message1, setMessage1] = useState("");
   const [message2, setMessage2] = useState("");
@@ -101,6 +122,7 @@ const Timeline = ({ setObserver, callback }) => {
   const timeline2 = useRef(null);
   const timeline3 = useRef(null);
   const timeline4 = useRef(null);
+  const timeline5 = useRef(null);
   const circle1 = useRef(null);
   const circle2 = useRef(null);
   const circle3 = useRef(null);
@@ -184,6 +206,7 @@ const Timeline = ({ setObserver, callback }) => {
     setObserver(timeline2.current);
     setObserver(timeline3.current);
     setObserver(timeline4.current);
+    setObserver(timeline5.current);
     setObserver(circle1.current, someCallback);
     setObserver(circle2.current, someCallback2);
     setObserver(circle3.current, someCallback3);
@@ -192,59 +215,48 @@ const Timeline = ({ setObserver, callback }) => {
 
   return (
     <Wrapper>
-      <FirstTimelineBar id="timeline1" ref={timeline1} />
-      <Circle id="circle1" ref={circle1} style={{ top: "0px" }}>
-        1
-      </Circle>
-      <RightBox style={{ top: "-35px" }}>{message1}</RightBox>
+      <CircleAndTimelineContainer>
+        <FirstTimelineBar id="timeline1" ref={timeline1} />
+        <Circle id="circle1" ref={circle1}>
+          1
+        </Circle>
+      </CircleAndTimelineContainer>
+      {/* <RightBox style={{ top: "332px" }}>{message1}</RightBox> */}
 
-      <TimelineBar
-        id="timeline2"
-        ref={timeline2}
-        style={{
-          top: "-345px",
-        }}
-      />
-      <Circle id="circle2" ref={circle2} style={{ top: "-345px" }}>
-        2
-      </Circle>
-      <LeftBox style={{ top: "-380px" }}>{message2}</LeftBox>
+      <CircleAndTimelineContainer>
+        <TimelineBar id="timeline2" ref={timeline2} />
+        <Circle id="circle2" ref={circle2}>
+          2
+        </Circle>
+      </CircleAndTimelineContainer>
+      {/* <LeftBox style={{ top: "681px" }}>{message2}</LeftBox> */}
 
-      <TimelineBar
-        id="timeline3"
-        ref={timeline3}
-        style={{
-          top: "-690px",
-        }}
-      />
-      <Circle
-        id="circle3"
-        ref={circle3}
-        style={{
-          top: "-690px",
-        }}
-      >
-        3
-      </Circle>
-      <RightBox style={{ top: "-723px" }}>{message3}</RightBox>
+      <CircleAndTimelineContainer>
+        <TimelineBar id="timeline3" ref={timeline3} />
+        <Circle id="circle3" ref={circle3}>
+          3
+        </Circle>
+      </CircleAndTimelineContainer>
+      {/* <RightBox style={{ top: "1032px" }}>{message3}</RightBox> */}
 
-      <TimelineBar
-        id="timeline4"
-        ref={timeline4}
-        style={{
-          top: "-1035px",
-        }}
-      />
-      <Circle
-        id="circle4"
-        ref={circle4}
-        style={{
-          top: "-1035px",
-        }}
-      >
-        4
-      </Circle>
-      <LeftBox style={{ top: "-1066px" }}>{message4}</LeftBox>
+      <CircleAndTimelineContainer>
+        <TimelineBar id="timeline4" ref={timeline4} />
+        <Circle id="circle4" ref={circle4}>
+          4
+        </Circle>
+      </CircleAndTimelineContainer>
+      {/* <LeftBox style={{ top: "1381px" }}>{message4}</LeftBox> */}
+
+      <CircleAndTimelineContainer>
+        <TimelineBar id="timeline5" ref={timeline5} />
+      </CircleAndTimelineContainer>
+
+      <BoxContainer>
+        <RightBox>{message1}</RightBox>
+        <LeftBox>{message2}</LeftBox>
+        <RightBox>{message3}</RightBox>
+        <LeftBox>{message4}</LeftBox>
+      </BoxContainer>
     </Wrapper>
   );
 };

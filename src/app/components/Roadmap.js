@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import TimelineObserver from "react-timeline-animation";
 import Fade from "react-reveal/Fade";
 
@@ -251,8 +251,8 @@ const Timeline = ({ setObserver, callback }) => {
           <BoxContainer style={{ top: "-314px" }}>
             <RightBox>{message1}</RightBox>
           </BoxContainer>
-          <BoxContainer>
-            <RightBox style={{ top: "41px" }}>{message3}</RightBox>
+          <BoxContainer style={{ top: "41px" }}>
+            <RightBox>{message3}</RightBox>
           </BoxContainer>
         </BoxContainer>
       </Container>

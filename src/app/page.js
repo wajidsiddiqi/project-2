@@ -6,6 +6,7 @@ import Image from "next/image";
 import "./styles/custom-font.css";
 import Roadmap from "./components/Roadmap";
 import Art from "./components/Art";
+import Team from "./components/Team";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -208,6 +209,7 @@ export default function Home() {
       </PageWrapper>
       <Roadmap />
       <Art />
+      <Team />
     </Wrapper>
   );
 }

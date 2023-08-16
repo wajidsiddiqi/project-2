@@ -50,7 +50,13 @@ const Gallery = ({ images }) => {
     <GalleryContainer>
       {images.map((image, index) => (
         <ImageWrapper key={index}>
-          <Image src={image} alt={`Image ${index}`} width={200} height={200} />
+          <Image
+            src={image}
+            alt={`Image ${index}`}
+            width={200}
+            height={200}
+            layout="responsive"
+          />
         </ImageWrapper>
       ))}
     </GalleryContainer>

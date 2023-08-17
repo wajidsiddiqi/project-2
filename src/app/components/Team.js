@@ -53,7 +53,6 @@ const Icons = styled.i`
   align-items: center;
   justify-content: center;
   transition: all 0.38s ease;
-  margin: 1rem;
 
   &:hover {
     transform: scale(1.2);
@@ -72,7 +71,6 @@ const H3Title = styled.h2`
   font-size: 1.5rem;
   text-transform: uppercase;
   font-family: "04b30";
-  margin: 1rem;
   text-shadow: black 0px 3px;
 `;
 

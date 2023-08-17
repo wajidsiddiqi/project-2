@@ -7,6 +7,7 @@ import "./styles/custom-font.css";
 import Roadmap from "./components/Roadmap";
 import Art from "./components/Art";
 import Team from "./components/Team";
+import Footer from "./components/Footer";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -210,6 +211,7 @@ export default function Home() {
       <Roadmap />
       <Art />
       <Team />
+      <Footer />
     </Wrapper>
   );
 }

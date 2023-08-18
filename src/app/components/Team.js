@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Image from "next/image";
 
+const MaxWidth = styled.div`
+  max-width: 1600px;
+`;
+
 const PageWrapper = styled.div`
   background-color: #a474c6;
   position: relative;
@@ -85,84 +89,86 @@ const Para = styled.p`
 export default function Team() {
   return (
     <PageWrapper>
-      <H1Title>Our Team</H1Title>
+      <MaxWidth>
+        <H1Title>Our Team</H1Title>
 
-      <TeamContent>
-        <Box>
-          <Image
-            src="/assets/nfts/7.png"
-            alt="Team Member"
-            style={ImageStyle}
-            width={0}
-            height={0}
-            layout="responsive"
-          />
-          <H3Title>Peter Joe</H3Title>
-          <Para>Founder</Para>
-          <Icons>
-            <a href="#">
-              <i>
-                <Image
-                  src="/assets/icons/twitter-x.svg"
-                  width="35"
-                  height="35"
-                  alt="Twitter"
-                />
-              </i>
-            </a>
-          </Icons>
-        </Box>
+        <TeamContent>
+          <Box>
+            <Image
+              src="/assets/nfts/7.png"
+              alt="Team Member"
+              style={ImageStyle}
+              width={0}
+              height={0}
+              layout="responsive"
+            />
+            <H3Title>Peter Joe</H3Title>
+            <Para>Founder</Para>
+            <Icons>
+              <a href="#">
+                <i>
+                  <Image
+                    src="/assets/icons/twitter-x.svg"
+                    width="35"
+                    height="35"
+                    alt="Twitter"
+                  />
+                </i>
+              </a>
+            </Icons>
+          </Box>
 
-        <Box>
-          <Image
-            src="/assets/nfts/16.png"
-            alt="Team Member"
-            style={ImageStyle}
-            width={0}
-            height={0}
-            unoptimized
-          />
-          <H3Title>Wajid</H3Title>
-          <Para>Developer</Para>
-          <div>
-            <a href="https://twitter.com/abdulwajidsid" target="_blank">
-              <Icons>
-                <Image
-                  src="/assets/icons/twitter-x.svg"
-                  width="35"
-                  height="35"
-                  alt="Twitter"
-                />
-              </Icons>
-            </a>
-          </div>
-        </Box>
+          <Box>
+            <Image
+              src="/assets/nfts/16.png"
+              alt="Team Member"
+              style={ImageStyle}
+              width={0}
+              height={0}
+              unoptimized
+            />
+            <H3Title>Wajid</H3Title>
+            <Para>Developer</Para>
+            <div>
+              <a href="https://twitter.com/abdulwajidsid" target="_blank">
+                <Icons>
+                  <Image
+                    src="/assets/icons/twitter-x.svg"
+                    width="35"
+                    height="35"
+                    alt="Twitter"
+                  />
+                </Icons>
+              </a>
+            </div>
+          </Box>
 
-        <Box>
-          <Image
-            src="/assets/nfts/2.png"
-            alt="Team Member"
-            style={ImageStyle}
-            width={0}
-            height={0}
-            unoptimized
-          />
-          <H3Title>Tom Luka</H3Title>
-          <Para>Artist</Para>
-          <Icons>
-            <a href="#">
-              <i>
-                <Image
-                  src="/assets/icons/twitter-x.svg"
-                  width="35"
-                  height="35"
-                  alt="Twitter"
-                />
-              </i>
-            </a>
-          </Icons>
-        </Box>
-      </TeamContent>
+          <Box>
+            <Image
+              src="/assets/nfts/2.png"
+              alt="Team Member"
+              style={ImageStyle}
+              width={0}
+              height={0}
+              unoptimized
+            />
+            <H3Title>Tom Luka</H3Title>
+            <Para>Artist</Para>
+            <Icons>
+              <a href="#">
+                <i>
+                  <Image
+                    src="/assets/icons/twitter-x.svg"
+                    width="35"
+                    height="35"
+                    alt="Twitter"
+                  />
+                </i>
+              </a>
+            </Icons>
+          </Box>
+        </TeamContent>
+      </MaxWidth>
     </PageWrapper>
   );
 }

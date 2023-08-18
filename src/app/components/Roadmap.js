@@ -3,6 +3,10 @@ import styled from "styled-components";
 import TimelineObserver from "react-timeline-animation";
 import Fade from "react-reveal/Fade";
 
+const MaxWidth = styled.div`
+  max-width: 1600px;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -269,18 +273,20 @@ export default function Roadmap() {
 
   return (
     <PageWrapper>
-      <H1Title>Roadmap</H1Title>
-      <TimelineObserver
-        initialColor="#a474c6"
-        fillColor="#eef3f1"
-        handleObserve={(setObserver) => (
-          <Timeline
-            callback={onCallback}
-            style={{ ...TimelineBar }}
-            setObserver={setObserver}
-          />
-        )}
-      />
+      <MaxWidth>
+        <H1Title>Roadmap</H1Title>
+        <TimelineObserver
+          initialColor="#a474c6"
+          fillColor="#eef3f1"
+          handleObserve={(setObserver) => (
+            <Timeline
+              callback={onCallback}
+              style={{ ...TimelineBar }}
+              setObserver={setObserver}
+            />
+          )}
+        />
+      </MaxWidth>
     </PageWrapper>
   );
 }

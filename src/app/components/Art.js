@@ -10,6 +10,10 @@ const PageWrapper = styled.div`
   padding: 0rem 2rem 6.5rem 2rem;
 `;
 
+const MaxWidth = styled.div`
+  max-width: 1600px;
+`;
+
 const H1Title = styled.h1`
   color: #a474c6;
   font-size: 3.5rem;
@@ -74,8 +78,10 @@ export default function Art() {
 
   return (
     <PageWrapper>
-      <H1Title>Art</H1Title>
-      <Gallery images={generateImageUrls()} />
+      <MaxWidth>
+        <H1Title>Art</H1Title>
+        <Gallery images={generateImageUrls()} />
+      </MaxWidth>
     </PageWrapper>
   );
 }

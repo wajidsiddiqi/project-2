@@ -8,6 +8,7 @@ import Roadmap from "./components/Roadmap";
 import Art from "./components/Art";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -212,6 +213,7 @@ export default function Home() {
       <Art />
       <Team />
       <Footer />
+      <ScrollToTopButton />
     </Wrapper>
   );
 }

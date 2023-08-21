@@ -3,6 +3,13 @@ import styled from "styled-components";
 import TimelineObserver from "react-timeline-animation";
 import Fade from "react-reveal/Fade";
 
+import {
+  PageWrapperDark,
+  H1TitleLight,
+  ParaMid,
+  H2TitleDark,
+} from "@/app/styles/styles.js";
+
 const MaxWidth = styled.div`
   max-width: 1600px;
 `;
@@ -11,17 +18,6 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const PageWrapper = styled.div`
-  background-color: #a474c6;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0rem 2rem 6.5rem 2rem;
-  overflow: hidden;
 `;
 
 const TimelineBar = styled.div`
@@ -63,32 +59,6 @@ const RightBox = styled.div`
 
 const LeftBox = styled(RightBox)`
   border-radius: 5rem 0rem 5rem 5rem;
-`;
-
-const H1Title = styled.h1`
-  color: #eef3f1;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-family: "04b30";
-  padding: 6.5rem;
-  text-shadow: black 0px 3px;
-`;
-
-const H2Title = styled.h2`
-  color: #a474c6;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-family: "04b30";
-  margin: 1rem;
-  text-shadow: black 0px 3px;
-`;
-
-const Para = styled.p`
-  color: #a474c6;
-  font-size: 1.5rem;
-  margin: 1rem;
-  line-height: 1;
-  text-shadow: black 0px 1px;
 `;
 
 const CircleAndTimelineContainer = styled.div`
@@ -133,13 +103,13 @@ const Timeline = ({ setObserver, callback }) => {
       return (
         <div>
           <Fade bottom>
-            <H2Title>Phase 1</H2Title>
-            <Para>
+            <H2TitleDark>Phase 1</H2TitleDark>
+            <ParaMid>
               Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
               quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
               eum explicabo debitis nam eius debitis. Et suscipit laborum et
               nulla consequuntur ea dolore repellat.
-            </Para>
+            </ParaMid>
           </Fade>
         </div>
       );
@@ -152,13 +122,13 @@ const Timeline = ({ setObserver, callback }) => {
       return (
         <div>
           <Fade bottom>
-            <H2Title>Phase 2</H2Title>
-            <Para>
+            <H2TitleDark>Phase 2</H2TitleDark>
+            <ParaMid>
               Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
               quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
               eum explicabo debitis nam eius debitis. Et suscipit laborum et
               nulla consequuntur ea dolore repellat.
-            </Para>
+            </ParaMid>
           </Fade>
         </div>
       );
@@ -170,13 +140,13 @@ const Timeline = ({ setObserver, callback }) => {
       return (
         <div>
           <Fade bottom>
-            <H2Title>Phase 3</H2Title>
-            <Para>
+            <H2TitleDark>Phase 3</H2TitleDark>
+            <ParaMid>
               Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
               quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
               eum explicabo debitis nam eius debitis. Et suscipit laborum et
               nulla consequuntur ea dolore repellat.
-            </Para>
+            </ParaMid>
           </Fade>
         </div>
       );
@@ -188,7 +158,7 @@ const Timeline = ({ setObserver, callback }) => {
       return (
         <div>
           <Fade bottom>
-            <H2Title>Phase 4</H2Title>
+            <H2TitleDark>Phase 4</H2TitleDark>
             <Para>
               Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
               quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
@@ -272,9 +242,9 @@ export default function Roadmap() {
   };
 
   return (
-    <PageWrapper>
+    <PageWrapperDark>
       <MaxWidth>
-        <H1Title>Roadmap</H1Title>
+        <H1TitleLight>Roadmap</H1TitleLight>
         <TimelineObserver
           initialColor="#a474c6"
           fillColor="#eef3f1"
@@ -287,6 +257,6 @@ export default function Roadmap() {
           )}
         />
       </MaxWidth>
-    </PageWrapper>
+    </PageWrapperDark>
   );
 }

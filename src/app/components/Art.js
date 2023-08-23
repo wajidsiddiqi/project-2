@@ -1,53 +1,12 @@
-const PageWrapper = styled.div`
-  background-color: #eef3f1;
-  position: relative;
-  overflow: hidden;
-  padding: 0px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0rem 2rem 6.5rem 2rem;
-`;
-
-const MaxWidth = styled.div`
-  max-width: 1600px;
-`;
-
-const H1Title = styled.h1`
-  color: #a474c6;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-family: "04b30";
-  padding: 6.5rem;
-  text-shadow: black 0px 3px;
-`;
-
-import React from "react";
-import styled from "styled-components";
 import Image from "next/image";
 
-const GalleryContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-`;
-
-const ImageWrapper = styled.div`
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 2rem;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
+import {
+  PageWrapperLight,
+  H1TitleDark,
+  MaxWidth,
+  GalleryContainer,
+  ImageWrapper,
+} from "@/app/styles/styles.js";
 
 const Gallery = ({ images }) => {
   return (
@@ -77,11 +36,11 @@ export default function Art() {
   };
 
   return (
-    <PageWrapper>
+    <PageWrapperLight>
       <MaxWidth>
-        <H1Title>Art</H1Title>
+        <H1TitleDark>Art</H1TitleDark>
         <Gallery images={generateImageUrls()} />
       </MaxWidth>
-    </PageWrapper>
+    </PageWrapperLight>
   );
 }

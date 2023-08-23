@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-import styled from "styled-components";
 import Image from "next/image";
 import "./styles/custom-font.css";
 import Roadmap from "./components/Roadmap";
@@ -13,31 +12,11 @@ import {
   MainH1Title,
   ParaBig,
   StyledButton,
+  TextWrapper,
+  ImageContainer,
+  Wrapper,
+  bgImageStyle,
 } from "@/app/styles/styles.js";
-
-const TextWrapper = styled.div`
-  position: absolute;
-  text-align: center;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-
-const bgImageStyle = {
-  position: "relative",
-  objectFit: "contain",
-};
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-`;
 
 export default function Home() {
   const parallax = (e) => {

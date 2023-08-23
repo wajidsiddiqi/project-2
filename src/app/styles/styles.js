@@ -324,6 +324,29 @@ const ImageStyle = {
   marginBottom: "2rem",
 };
 
+const ScrollToTopButtonWrapper = styled.button`
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #56326d;
+  border: none;
+  border-radius: 5rem;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  justify-content: center;
+  align-items: center;
+  box-shadow: black 0px 3px;
+
+  &:hover {
+    background-color: #a474c6;
+  }
+
+  ${({ isVisible }) => isVisible && "display: flex;"}
+`;
+
 export {
   MaxWidth,
   MainPageWrapper,
@@ -365,4 +388,5 @@ export {
   Icons,
   ImageStyle,
   Box,
+  ScrollToTopButtonWrapper,
 };

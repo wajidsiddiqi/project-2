@@ -245,6 +245,28 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
+const GalleryContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
 export {
   MaxWidth,
   MainPageWrapper,
@@ -278,4 +300,6 @@ export {
   FirstTimelineBar,
   LeftBox,
   RightBox,
+  GalleryContainer,
+  ImageWrapper,
 };

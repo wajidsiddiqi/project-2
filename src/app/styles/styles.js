@@ -177,6 +177,74 @@ const Wrapper = styled.div`
   top: 0;
 `;
 
+const TimelineWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TimelineBar = styled.div`
+  height: 300px;
+  width: 6.5px;
+  position: relative;
+`;
+
+const FirstTimelineBar = styled(TimelineBar)`
+  height: 50px;
+  position: relative;
+  top: 0px;
+`;
+
+const Circle = styled.div`
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #a474c6;
+  border-radius: 50%;
+  position: relative;
+`;
+
+const RightBox = styled.div`
+  background-color: #eef3f1;
+  padding: 2rem;
+  box-shadow: black 0px 3px;
+  border-radius: 0rem 5rem 5rem 5rem;
+  width: 40rem;
+  height: 21.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const LeftBox = styled(RightBox)`
+  border-radius: 5rem 0rem 5rem 5rem;
+`;
+
+const CircleAndTimelineContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const BoxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`;
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+`;
+
 export {
   MaxWidth,
   MainPageWrapper,
@@ -201,4 +269,13 @@ export {
   ImageContainer,
   Wrapper,
   bgImageStyle,
+  Container,
+  BoxContainer,
+  TimelineBar,
+  TimelineWrapper,
+  Circle,
+  CircleAndTimelineContainer,
+  FirstTimelineBar,
+  LeftBox,
+  RightBox,
 };

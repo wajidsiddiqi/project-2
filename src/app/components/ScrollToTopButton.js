@@ -1,29 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import styled from "styled-components";
 
-const ScrollToTopButtonWrapper = styled.button`
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #56326d;
-  border: none;
-  border-radius: 5rem;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  justify-content: center;
-  align-items: center;
-  box-shadow: black 0px 3px;
-
-  &:hover {
-    background-color: #a474c6;
-  }
-
-  ${({ isVisible }) => isVisible && "display: flex;"}
-`;
+import { ScrollToTopButtonWrapper } from "@/app/styles/styles.js";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);

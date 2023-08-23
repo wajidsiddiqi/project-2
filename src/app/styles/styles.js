@@ -153,6 +153,30 @@ const StyledNav = styled.nav`
   z-index: 98;
 `;
 
+const TextWrapper = styled.div`
+  position: absolute;
+  text-align: center;
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const bgImageStyle = {
+  position: "relative",
+  objectFit: "contain",
+};
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+`;
+
 export {
   MaxWidth,
   MainPageWrapper,
@@ -173,4 +197,8 @@ export {
   NavLinkForIcon,
   NavLinkText,
   StyledNav,
+  TextWrapper,
+  ImageContainer,
+  Wrapper,
+  bgImageStyle,
 };

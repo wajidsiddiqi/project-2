@@ -56,6 +56,14 @@ const H2TitleDark = styled.h2`
   text-shadow: black 0px 3px;
 `;
 
+const H3Title = styled.h3`
+  color: #a474c6;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: "04b30";
+  text-shadow: black 0px 3px;
+`;
+
 const ParaBig = styled.p`
   color: #a474c6;
   font-size: 2rem;
@@ -66,6 +74,10 @@ const ParaBig = styled.p`
 
 const ParaMid = styled.p`
   font-size: 1.5rem;
+`;
+
+const ParaSm = styled.p`
+  font-size: 1.4rem;
 `;
 
 const StyledButton = styled.button`
@@ -267,6 +279,51 @@ const ImageWrapper = styled.div`
   }
 `;
 
+const TeamContent = styled.div`
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+`;
+
+const Box = styled.div`
+  transition: all 0.38s ease;
+  background-color: #eef3f1;
+  padding: 2rem;
+  box-shadow: black 0px 3px;
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+`;
+
+const Icons = styled.i`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.38s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+const ImageStyle = {
+  width: "100%",
+  height: "auto",
+  borderRadius: "5rem",
+  marginBottom: "2rem",
+};
+
 export {
   MaxWidth,
   MainPageWrapper,
@@ -302,4 +359,10 @@ export {
   RightBox,
   GalleryContainer,
   ImageWrapper,
+  H3Title,
+  ParaSm,
+  TeamContent,
+  Icons,
+  ImageStyle,
+  Box,
 };

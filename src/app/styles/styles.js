@@ -72,11 +72,11 @@ const ParaBig = styled.p`
   text-shadow: black 0px 1px;
 `;
 
-const ParaMid = styled.p`
+const ParaMid = styled(ParaBig)`
   font-size: 1.5rem;
 `;
 
-const ParaSm = styled.p`
+const ParaSm = styled(ParaMid)`
   font-size: 1.4rem;
 `;
 

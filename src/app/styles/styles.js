@@ -347,6 +347,19 @@ const ScrollToTopButtonWrapper = styled.button`
   ${({ isVisible }) => isVisible && "display: flex;"}
 `;
 
+const StyledFooter = styled.footer`
+  background-color: #eef3f1;
+  padding: 0.5rem 2.5rem;
+`;
+
+const FooterPara = styled.p`
+  color: #a474c6;
+  font-size: 1.4rem;
+  margin: 1rem 0rem 1rem 1rem;
+  line-height: 1;
+  text-shadow: black 0px 1px;
+`;
+
 export {
   MaxWidth,
   MainPageWrapper,
@@ -389,4 +402,6 @@ export {
   ImageStyle,
   Box,
   ScrollToTopButtonWrapper,
+  FooterPara,
+  StyledFooter,
 };

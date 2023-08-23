@@ -1,80 +1,19 @@
 "use client";
 import React from "react";
-import styled from "styled-components";
 import Image from "next/image";
 import { ConnectKitButton } from "connectkit";
 import Link from "next/link";
 
-const MaxWidth = styled.div`
-  max-width: 1600px;
-  margin: auto;
-`;
-
-const Center = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const CenterSpaceAround = styled(Center)`
-  justify-content: space-around;
-`;
-
-const CenterSpaceBetween = styled(Center)`
-  justify-content: space-between;
-`;
-
-const NavLink = styled.ul`
-  padding: 0.7rem 0rem;
-  text-decoration: none;
-  color: #eef3f1;
-  cursor: pointer;
-  font-size: 1.2rem;
-`;
-
-const NavLinkForIcon = styled.ul`
-  padding: 0rem 0.7rem;
-  text-decoration: none;
-`;
-
-const NavLinkText = styled.span`
-  padding: 0.7rem 1rem;
-  border-radius: 5rem;
-  transition: background-color 0.3s, color 0.3s;
-
-  &:hover {
-    background-color: #eef3f1;
-    color: #a474c6;
-  }
-`;
-
-const StyledConnectButton = styled.button`
-  padding: 0.7rem 1.4rem;
-  color: #eef3f1;
-  cursor: pointer;
-  border-radius: 5rem;
-  font-family: inherit;
-  background-color: #a474c6;
-  border: none;
-  font-size: 1.2rem;
-  transition: background-color 0.3s, color 0.3s;
-  box-shadow: black 0px 3px;
-
-  &:hover {
-    background-color: #eef3f1;
-    color: #a474c6;
-  }
-`;
-
-const StyledNav = styled.nav`
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
-  padding: 0.5rem 2.5rem;
-  z-index: 98;
-`;
+import {
+  CenterSpaceBetween,
+  CenterSpaceAround,
+  MaxWidth,
+  StyledConnectButton,
+  NavLink,
+  NavLinkForIcon,
+  NavLinkText,
+  StyledNav,
+} from "@/app/styles/styles.js";
 
 export default function Header() {
   return (

@@ -96,12 +96,12 @@ const Timeline = ({ setObserver, callback }) => {
         <div>
           <Fade bottom>
             <H2TitleDark>Phase 4</H2TitleDark>
-            <Para>
+            <ParaMid>
               Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
               quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
               eum explicabo debitis nam eius debitis. Et suscipit laborum et
               nulla consequuntur ea dolore repellat.
-            </Para>
+            </ParaMid>
           </Fade>
         </div>
       );

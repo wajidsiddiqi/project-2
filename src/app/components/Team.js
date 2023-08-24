@@ -14,7 +14,7 @@ import {
 
 export default function Team() {
   return (
-    <PageWrapperDark>
+    <PageWrapperDark id="team">
       <MaxWidth>
         <H1TitleLight>Our Team</H1TitleLight>
 

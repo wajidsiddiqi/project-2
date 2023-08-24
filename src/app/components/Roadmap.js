@@ -179,7 +179,7 @@ export default function Roadmap() {
   };
 
   return (
-    <PageWrapperDark>
+    <PageWrapperDark id="roadmap">
       <MaxWidth>
         <H1TitleLight>Roadmap</H1TitleLight>
         <TimelineObserver

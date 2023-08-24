@@ -36,7 +36,7 @@ export default function Art() {
   };
 
   return (
-    <PageWrapperLight>
+    <PageWrapperLight id="art">
       <MaxWidth>
         <H1TitleDark>Art</H1TitleDark>
         <Gallery images={generateImageUrls()} />

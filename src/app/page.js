@@ -45,7 +45,9 @@ export default function Home() {
             <br />
             10,000 unique pixel art
           </ParaBig>
-          <StyledButton>Mint Now</StyledButton>
+          <a href="https://opensea.io/collection/beanz-pixel" target="_blank">
+            <StyledButton>Mint Now</StyledButton>
+          </a>
         </TextWrapper>
         <ImageContainer>
           <Image

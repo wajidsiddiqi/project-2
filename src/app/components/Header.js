@@ -2,7 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { ConnectKitButton } from "connectkit";
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 import {
   CenterSpaceBetween,
@@ -30,37 +31,45 @@ export default function Header() {
             }}
           >
             <NavLink>
-              <NavLinkText>Home</NavLinkText>
+              <NextLink href="/">
+                <NavLinkText>Home</NavLinkText>
+              </NextLink>
             </NavLink>
             <NavLink>
-              <NavLinkText>Roadmap</NavLinkText>
+              <ScrollLink to="roadmap" smooth={true} duration={500}>
+                <NavLinkText>Roadmap</NavLinkText>
+              </ScrollLink>
             </NavLink>
             <NavLink>
-              <NavLinkText>Art</NavLinkText>
+              <ScrollLink to="art" smooth={true} duration={500}>
+                <NavLinkText>Art</NavLinkText>
+              </ScrollLink>
             </NavLink>
             <NavLink>
-              <NavLinkText>Team</NavLinkText>
+              <ScrollLink to="team" smooth={true} duration={500}>
+                <NavLinkText>Team</NavLinkText>
+              </ScrollLink>
             </NavLink>
 
             <NavLinkForIcon>
-              <Link href="http://opensea.com">
+              <NextLink href="http://opensea.com">
                 <Image
                   src="/assets/icons/opensea.svg"
                   width="36"
                   height="36"
                   alt="Opensea"
                 />
-              </Link>
+              </NextLink>
             </NavLinkForIcon>
             <NavLinkForIcon>
-              <Link href="http://discord.com">
+              <NextLink href="http://discord.com">
                 <Image
                   src="/assets/icons/discord.svg"
                   width="36"
                   height="36"
                   alt="Discord"
                 />
-              </Link>
+              </NextLink>
             </NavLinkForIcon>
           </CenterSpaceAround>
 

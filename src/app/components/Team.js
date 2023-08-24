@@ -29,7 +29,7 @@ export default function Team() {
               layout="responsive"
             />
             <H3Title>Peter Joe</H3Title>
-            <Para>Founder</Para>
+            <ParaSm>Founder</ParaSm>
             <Icons>
               <a href="#">
                 <i>
@@ -54,7 +54,7 @@ export default function Team() {
               unoptimized
             />
             <H3Title>Wajid</H3Title>
-            <Para>Developer</Para>
+            <ParaSm>Developer</ParaSm>
             <div>
               <a href="https://twitter.com/abdulwajidsid" target="_blank">
                 <Icons>
@@ -79,7 +79,7 @@ export default function Team() {
               unoptimized
             />
             <H3Title>Tom Luka</H3Title>
-            <Para>Artist</Para>
+            <ParaSm>Artist</ParaSm>
             <Icons>
               <a href="#">
                 <i>

@@ -30,11 +30,11 @@ export default function Header() {
               boxShadow: "black 0px 3px",
             }}
           >
-            <NavLink>
-              <NextLink href="/">
+            <NextLink href="/" style={{ textDecoration: "none" }}>
+              <NavLink>
                 <NavLinkText>Home</NavLinkText>
-              </NextLink>
-            </NavLink>
+              </NavLink>
+            </NextLink>
             <NavLink>
               <ScrollLink to="roadmap" smooth={true} duration={500}>
                 <NavLinkText>Roadmap</NavLinkText>

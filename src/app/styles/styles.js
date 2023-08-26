@@ -35,12 +35,21 @@ const MainH1Title = styled.h1`
   font-family: "04b30";
   margin: 1rem;
   text-shadow: black 0px 3px;
+
+  @media (max-width: 700px) {
+    font-size: 3rem;
+    margin: 0.5rem;
+  }
 `;
 
 const H1TitleLight = styled(MainH1Title)`
   color: #eef3f1;
   margin: 0;
   padding: 6.5rem;
+
+  @media (max-width: 700px) {
+    padding: 5rem;
+  }
 `;
 
 const H1TitleDark = styled(H1TitleLight)`
@@ -54,6 +63,11 @@ const H2TitleDark = styled.h2`
   font-family: "04b30";
   margin: 1rem;
   text-shadow: black 0px 3px;
+
+  @media (max-width: 700px) {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
 `;
 
 const H3Title = styled.h3`
@@ -62,6 +76,10 @@ const H3Title = styled.h3`
   text-transform: uppercase;
   font-family: "04b30";
   text-shadow: black 0px 3px;
+
+  @media (max-width: 700px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ParaBig = styled.p`
@@ -70,14 +88,27 @@ const ParaBig = styled.p`
   margin: 1rem;
   line-height: 1;
   text-shadow: black 0px 1px;
+
+  @media (max-width: 700px) {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
 `;
 
 const ParaMid = styled(ParaBig)`
   font-size: 1.5rem;
+
+  @media (max-width: 700px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ParaSm = styled(ParaMid)`
   font-size: 1.4rem;
+
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -230,6 +261,11 @@ const RightBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 1474px) {
+    width: 100%;
+    height: 21.5rem;
+  }
 `;
 
 const LeftBox = styled(RightBox)`
@@ -247,7 +283,7 @@ const BoxContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  flex: 1;
 `;
 
 const Container = styled.div`

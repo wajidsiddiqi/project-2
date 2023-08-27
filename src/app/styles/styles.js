@@ -36,7 +36,7 @@ const MainH1Title = styled.h1`
   margin: 1rem;
   text-shadow: black 0px 3px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1042px) {
     font-size: 3rem;
     margin: 0.5rem;
   }
@@ -47,7 +47,7 @@ const H1TitleLight = styled(MainH1Title)`
   margin: 0;
   padding: 6.5rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1042px) {
     padding: 5rem;
   }
 `;
@@ -64,7 +64,7 @@ const H2TitleDark = styled.h2`
   margin: 1rem;
   text-shadow: black 0px 3px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1042px) {
     font-size: 2rem;
     margin: 0.5rem;
   }
@@ -77,7 +77,7 @@ const H3Title = styled.h3`
   font-family: "04b30";
   text-shadow: black 0px 3px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1042px) {
     font-size: 1.2rem;
   }
 `;
@@ -89,7 +89,7 @@ const ParaBig = styled.p`
   line-height: 1;
   text-shadow: black 0px 1px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1042px) {
     font-size: 1.5rem;
     margin: 0.5rem;
   }
@@ -98,7 +98,7 @@ const ParaBig = styled.p`
 const ParaMid = styled(ParaBig)`
   font-size: 1.5rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1042px) {
     font-size: 1.2rem;
   }
 `;
@@ -106,7 +106,7 @@ const ParaMid = styled(ParaBig)`
 const ParaSm = styled(ParaMid)`
   font-size: 1.4rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1042px) {
     font-size: 1rem;
   }
 `;
@@ -283,7 +283,7 @@ const BoxContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  position: relative;
 `;
 
 const Container = styled.div`

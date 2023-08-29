@@ -131,6 +131,7 @@ const StyledButton = styled.button`
 
   @media (max-width: 1042px) {
     font-size: 1rem;
+    margin: 0.5rem;
   }
 `;
 

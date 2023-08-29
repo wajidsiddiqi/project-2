@@ -40,9 +40,9 @@ export default function Home() {
         <TextWrapper>
           <MainH1Title>Beanz Pixel</MainH1Title>
           <ParaBig>
-            Beanz Pixel is a collection of
+            Beanz Pixel is a collection
             <br />
-            10,000 unique pixel art
+            of 10,000 unique pixel art
           </ParaBig>
           <a href="https://opensea.io/collection/beanz-pixel" target="_blank">
             <StyledButton>Mint Now</StyledButton>

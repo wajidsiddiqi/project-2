@@ -17,6 +17,7 @@ import {
   StyledNav,
   StyledButton,
   PageWrapperDark,
+  Center,
 } from "@/app/styles/styles.js";
 
 export default function Header() {
@@ -25,7 +26,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 945);
+      setIsMobile(window.innerWidth <= 675);
     };
 
     handleResize();
@@ -51,34 +52,27 @@ export default function Header() {
         <CenterSpaceBetween>
           <Image src="/assets/logo.png" width="50" height="60" alt="Logo" />
 
-          {/* Hamburger Button - Fixed position */}
-          {isMobile && (
-            <StyledButton zIndex="997">
-              <Hamburger toggled={isOpen} toggle={handleMenuToggle} size={24} />
-            </StyledButton>
-          )}
-
           {/* Hamburger Menu */}
-          {isMobile && (
+          {isMobile && isOpen && (
             <PageWrapperDark
               style={{
                 position: "fixed",
                 top: "0",
-                left: isOpen ? "0" : "-300px",
+                right: isOpen ? "0" : "300px",
                 height: "100vh",
                 width: "300px",
                 zIndex: "998",
-                transition: "left 0.3s ease-in-out",
-                flexDirection: "row",
+                transition: "right 0.3s ease-in-out",
+                padding: "0",
               }}
             >
               {/* Your menu content here */}
-              {isOpen && (
+              {/* {isOpen && (
                 <StyledButton
                   zIndex="999"
-                  position="fixed"
-                  top="20px"
-                  left="215px"
+                  left="300px"
+                  position="relative"
+                  top="-130px"
                 >
                   <Hamburger
                     toggled={isOpen}
@@ -86,15 +80,9 @@ export default function Header() {
                     size={24}
                   />
                 </StyledButton>
-              )}
+              )} */}
 
-              <CenterSpaceAround
-                style={{
-                  borderRadius: "5rem",
-                  backgroundColor: "#a474c6",
-                  boxShadow: "black 0px 3px",
-                }}
-              >
+              <CenterSpaceAround style={{ flexDirection: "column" }}>
                 <NextLink
                   href="/"
                   style={{ textDecoration: "none" }}
@@ -135,7 +123,7 @@ export default function Header() {
                   </ScrollLink>
                 </NavLink>
 
-                <NavLinkForIcon>
+                <NavLinkForIcon style={{ padding: "0.7rem 0rem" }}>
                   <NextLink href="http://opensea.com" onClick={handleMenuClose}>
                     <Image
                       src="/assets/icons/opensea.svg"
@@ -145,7 +133,7 @@ export default function Header() {
                     />
                   </NextLink>
                 </NavLinkForIcon>
-                <NavLinkForIcon>
+                <NavLinkForIcon style={{ padding: "0.7rem 0rem" }}>
                   <NextLink href="http://discord.com" onClick={handleMenuClose}>
                     <Image
                       src="/assets/icons/discord.svg"
@@ -160,65 +148,80 @@ export default function Header() {
           )}
 
           {/* Menue */}
-          <CenterSpaceAround
-            style={{
-              borderRadius: "5rem",
-              backgroundColor: "#a474c6",
-              boxShadow: "black 0px 3px",
-            }}
-          >
-            <NextLink href="/" style={{ textDecoration: "none" }}>
+          {!isMobile && (
+            <CenterSpaceAround
+              style={{
+                borderRadius: "5rem",
+                backgroundColor: "#a474c6",
+                boxShadow: "black 0px 3px",
+              }}
+            >
+              <NextLink href="/" style={{ textDecoration: "none" }}>
+                <NavLink>
+                  <NavLinkText>Home</NavLinkText>
+                </NavLink>
+              </NextLink>
               <NavLink>
-                <NavLinkText>Home</NavLinkText>
+                <ScrollLink to="roadmap" smooth={true} duration={500}>
+                  <NavLinkText>Roadmap</NavLinkText>
+                </ScrollLink>
               </NavLink>
-            </NextLink>
-            <NavLink>
-              <ScrollLink to="roadmap" smooth={true} duration={500}>
-                <NavLinkText>Roadmap</NavLinkText>
-              </ScrollLink>
-            </NavLink>
-            <NavLink>
-              <ScrollLink to="art" smooth={true} duration={500}>
-                <NavLinkText>Art</NavLinkText>
-              </ScrollLink>
-            </NavLink>
-            <NavLink>
-              <ScrollLink to="team" smooth={true} duration={500}>
-                <NavLinkText>Team</NavLinkText>
-              </ScrollLink>
-            </NavLink>
+              <NavLink>
+                <ScrollLink to="art" smooth={true} duration={500}>
+                  <NavLinkText>Art</NavLinkText>
+                </ScrollLink>
+              </NavLink>
+              <NavLink>
+                <ScrollLink to="team" smooth={true} duration={500}>
+                  <NavLinkText>Team</NavLinkText>
+                </ScrollLink>
+              </NavLink>
 
-            <NavLinkForIcon>
-              <NextLink href="http://opensea.com">
-                <Image
-                  src="/assets/icons/opensea.svg"
-                  width="36"
-                  height="36"
-                  alt="Opensea"
-                />
-              </NextLink>
-            </NavLinkForIcon>
-            <NavLinkForIcon>
-              <NextLink href="http://discord.com">
-                <Image
-                  src="/assets/icons/discord.svg"
-                  width="36"
-                  height="36"
-                  alt="Discord"
-                />
-              </NextLink>
-            </NavLinkForIcon>
-          </CenterSpaceAround>
+              <NavLinkForIcon>
+                <NextLink href="http://opensea.com">
+                  <Image
+                    src="/assets/icons/opensea.svg"
+                    width="36"
+                    height="36"
+                    alt="Opensea"
+                  />
+                </NextLink>
+              </NavLinkForIcon>
+              <NavLinkForIcon>
+                <NextLink href="http://discord.com">
+                  <Image
+                    src="/assets/icons/discord.svg"
+                    width="36"
+                    height="36"
+                    alt="Discord"
+                  />
+                </NextLink>
+              </NavLinkForIcon>
+            </CenterSpaceAround>
+          )}
 
-          <ConnectKitButton.Custom>
-            {({ show }) => {
-              return (
-                <StyledConnectButton onClick={show}>
-                  Connect
-                </StyledConnectButton>
-              );
-            }}
-          </ConnectKitButton.Custom>
+          <Center style={{ gap: "2rem" }}>
+            <ConnectKitButton.Custom>
+              {({ show }) => {
+                return (
+                  <StyledConnectButton onClick={show}>
+                    Connect
+                  </StyledConnectButton>
+                );
+              }}
+            </ConnectKitButton.Custom>
+
+            {/* Hamburger Button - Fixed position */}
+            {isMobile && (
+              <StyledButton style={{ zIndex: "999", margin: "0" }}>
+                <Hamburger
+                  toggled={isOpen}
+                  toggle={handleMenuToggle}
+                  size={19.2}
+                />
+              </StyledButton>
+            )}
+          </Center>
         </CenterSpaceBetween>
       </MaxWidth>
     </StyledNav>

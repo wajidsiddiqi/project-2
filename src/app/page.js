@@ -14,7 +14,6 @@ import {
   StyledButton,
   TextWrapper,
   ImageContainer,
-  Wrapper,
   bgImageStyle,
 } from "@/app/styles/styles.js";
 
@@ -36,7 +35,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Wrapper>
+    <>
       <MainPageWrapper>
         <TextWrapper>
           <MainH1Title>Beanz Pixel</MainH1Title>
@@ -161,6 +160,6 @@ export default function Home() {
       <Team />
       <Footer />
       <ScrollToTopButton />
-    </Wrapper>
+    </>
   );
 }

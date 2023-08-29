@@ -66,22 +66,6 @@ export default function Header() {
                 padding: "0",
               }}
             >
-              {/* Your menu content here */}
-              {/* {isOpen && (
-                <StyledButton
-                  zIndex="999"
-                  left="300px"
-                  position="relative"
-                  top="-130px"
-                >
-                  <Hamburger
-                    toggled={isOpen}
-                    toggle={handleMenuToggle}
-                    size={24}
-                  />
-                </StyledButton>
-              )} */}
-
               <CenterSpaceAround style={{ flexDirection: "column" }}>
                 <NextLink
                   href="/"

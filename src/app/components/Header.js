@@ -213,7 +213,9 @@ export default function Header() {
 
             {/* Hamburger Button - Fixed position */}
             {isMobile && (
-              <StyledButton style={{ zIndex: "999", margin: "0" }}>
+              <StyledButton
+                style={{ zIndex: "999", margin: "0", padding: "0" }}
+              >
                 <Hamburger
                   toggled={isOpen}
                   toggle={handleMenuToggle}

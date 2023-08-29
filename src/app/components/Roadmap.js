@@ -108,6 +108,8 @@ const Timeline = ({ setObserver, callback }) => {
     });
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     setObserver(timeline1.current);
     setObserver(timeline2.current);
@@ -118,55 +120,108 @@ const Timeline = ({ setObserver, callback }) => {
     setObserver(circle2.current, someCallback2);
     setObserver(circle3.current, someCallback3);
     setObserver(circle4.current, someCallback4);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 775);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
     <TimelineWrapper>
-      <Container>
-        {/* left side boxs */}
-        <BoxContainer style={{ flexDirection: "column" }}>
-          <BoxContainer style={{ top: "36px" }}>
-            <LeftBox>{message2}</LeftBox>
+      {!isMobile && (
+        // left side boxs
+        <Container>
+          <BoxContainer style={{ flexDirection: "column" }}>
+            <BoxContainer style={{ top: "36px" }}>
+              <LeftBox>{message2}</LeftBox>
+            </BoxContainer>
+            <BoxContainer style={{ top: "391px" }}>
+              <LeftBox>{message4}</LeftBox>
+            </BoxContainer>
           </BoxContainer>
-          <BoxContainer style={{ top: "391px" }}>
-            <LeftBox>{message4}</LeftBox>
+          <CircleAndTimelineContainer>
+            <FirstTimelineBar id="timeline1" ref={timeline1} />
+            <Circle id="circle1" ref={circle1}>
+              1
+            </Circle>
+
+            <TimelineBar id="timeline2" ref={timeline2} />
+            <Circle id="circle2" ref={circle2}>
+              2
+            </Circle>
+
+            <TimelineBar id="timeline3" ref={timeline3} />
+            <Circle id="circle3" ref={circle3}>
+              3
+            </Circle>
+
+            <TimelineBar id="timeline4" ref={timeline4} />
+            <Circle id="circle4" ref={circle4}>
+              4
+            </Circle>
+
+            <TimelineBar id="timeline5" ref={timeline5} />
+          </CircleAndTimelineContainer>
+          {/* right side boxs */}
+          <BoxContainer style={{ flexDirection: "column" }}>
+            <BoxContainer style={{ top: "-314px" }}>
+              <RightBox>{message1}</RightBox>
+            </BoxContainer>
+            <BoxContainer style={{ top: "41px" }}>
+              <RightBox>{message3}</RightBox>
+            </BoxContainer>
           </BoxContainer>
-        </BoxContainer>
+        </Container>
+      )}
 
-        <CircleAndTimelineContainer>
-          <FirstTimelineBar id="timeline1" ref={timeline1} />
-          <Circle id="circle1" ref={circle1}>
-            1
-          </Circle>
+      {isMobile && (
+        <Container>
+          <CircleAndTimelineContainer>
+            <FirstTimelineBar id="timeline1" ref={timeline1} />
+            <Circle id="circle1" ref={circle1}>
+              1
+            </Circle>
 
-          <TimelineBar id="timeline2" ref={timeline2} />
-          <Circle id="circle2" ref={circle2}>
-            2
-          </Circle>
+            <TimelineBar id="timeline2" ref={timeline2} />
+            <Circle id="circle2" ref={circle2}>
+              2
+            </Circle>
 
-          <TimelineBar id="timeline3" ref={timeline3} />
-          <Circle id="circle3" ref={circle3}>
-            3
-          </Circle>
+            <TimelineBar id="timeline3" ref={timeline3} />
+            <Circle id="circle3" ref={circle3}>
+              3
+            </Circle>
 
-          <TimelineBar id="timeline4" ref={timeline4} />
-          <Circle id="circle4" ref={circle4}>
-            4
-          </Circle>
+            <TimelineBar id="timeline4" ref={timeline4} />
+            <Circle id="circle4" ref={circle4}>
+              4
+            </Circle>
 
-          <TimelineBar id="timeline5" ref={timeline5} />
-        </CircleAndTimelineContainer>
+            <TimelineBar id="timeline5" ref={timeline5} />
+          </CircleAndTimelineContainer>
 
-        {/* right side boxs */}
-        <BoxContainer style={{ flexDirection: "column" }}>
-          <BoxContainer style={{ top: "-314px" }}>
-            <RightBox>{message1}</RightBox>
+          {/* Right side boxs */}
+          <BoxContainer style={{ flexDirection: "column" }}>
+            <BoxContainer style={{ top: "-314px" }}>
+              <RightBox>{message1}</RightBox>
+            </BoxContainer>
+            <BoxContainer style={{ top: "41px" }}>
+              <RightBox>{message2}</RightBox>
+            </BoxContainer>
+            <BoxContainer style={{ top: "36px" }}>
+              <RightBox>{message3}</RightBox>
+            </BoxContainer>
+            <BoxContainer style={{ top: "391px" }}>
+              <RightBox>{message4}</RightBox>
+            </BoxContainer>
           </BoxContainer>
-          <BoxContainer style={{ top: "41px" }}>
-            <RightBox>{message3}</RightBox>
-          </BoxContainer>
-        </BoxContainer>
-      </Container>
+        </Container>
+      )}
     </TimelineWrapper>
   );
 };

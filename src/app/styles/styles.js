@@ -7,7 +7,7 @@ const MaxWidth = styled.div`
 
 const MainPageWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,6 +128,10 @@ const StyledButton = styled.button`
     background-color: #eef3f1;
     color: #a474c6;
   }
+
+  @media (max-width: 1042px) {
+    font-size: 1rem;
+  }
 `;
 
 const Center = styled.div`
@@ -187,8 +191,8 @@ const NavLinkText = styled.span`
 `;
 
 const StyledNav = styled.nav`
-  position: sticky;
-  top: 0;
+  position: fixed;
+  width: 100%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);

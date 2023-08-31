@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const MaxWidth = styled.div`
   max-width: 1600px;
-  margin: auto;
 `;
 
 const MainPageWrapper = styled.div`

@@ -17,6 +17,7 @@ import {
   FirstTimelineBar,
   LeftBox,
   RightBox,
+  Center,
 } from "@/app/styles/styles.js";
 
 const Timeline = ({ setObserver, callback }) => {
@@ -264,7 +265,9 @@ export default function Roadmap() {
   return (
     <PageWrapperDark id="roadmap">
       <MaxWidth>
-        <H1TitleLight>Roadmap</H1TitleLight>
+        <Center>
+          <H1TitleLight>Roadmap</H1TitleLight>
+        </Center>
 
         {isMobile ? (
           <TimelineObserver

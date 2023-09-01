@@ -20,11 +20,6 @@ import {
 } from "@/app/styles/styles.js";
 
 const Timeline = ({ setObserver, callback }) => {
-  const [message1, setMessage1] = useState("");
-  const [message2, setMessage2] = useState("");
-  const [message3, setMessage3] = useState("");
-  const [message4, setMessage4] = useState("");
-
   const timeline1 = useRef(null);
   const timeline2 = useRef(null);
   const timeline3 = useRef(null);
@@ -35,89 +30,16 @@ const Timeline = ({ setObserver, callback }) => {
   const circle3 = useRef(null);
   const circle4 = useRef(null);
 
-  const someCallback = () => {
-    setMessage1(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 1</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-    callback();
-  };
-
-  const someCallback2 = () => {
-    setMessage2(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 2</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-  };
-
-  const someCallback3 = () => {
-    setMessage3(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 3</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-  };
-
-  const someCallback4 = () => {
-    setMessage4(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 4</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-  };
-
   useEffect(() => {
     setObserver(timeline1.current);
     setObserver(timeline2.current);
     setObserver(timeline3.current);
     setObserver(timeline4.current);
     setObserver(timeline5.current);
-    setObserver(circle1.current, someCallback);
-    setObserver(circle2.current, someCallback2);
-    setObserver(circle3.current, someCallback3);
-    setObserver(circle4.current, someCallback4);
+    setObserver(circle1.current);
+    setObserver(circle2.current);
+    setObserver(circle3.current);
+    setObserver(circle4.current);
   }, []);
 
   return (
@@ -126,10 +48,30 @@ const Timeline = ({ setObserver, callback }) => {
         {/* left side boxs */}
         <BoxContainer style={{ flexDirection: "column" }}>
           <BoxContainer style={{ top: "36px" }}>
-            <LeftBox>{message2}</LeftBox>
+            <LeftBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 2</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </LeftBox>
           </BoxContainer>
           <BoxContainer style={{ top: "391px" }}>
-            <LeftBox>{message4}</LeftBox>
+            <LeftBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 4</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </LeftBox>
           </BoxContainer>
         </BoxContainer>
 
@@ -160,10 +102,30 @@ const Timeline = ({ setObserver, callback }) => {
         {/* Right side boxs */}
         <BoxContainer style={{ flexDirection: "column" }}>
           <BoxContainer style={{ top: "-314px" }}>
-            <RightBox>{message1}</RightBox>
+            <RightBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 1</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </RightBox>
           </BoxContainer>
           <BoxContainer style={{ top: "41px" }}>
-            <RightBox>{message3}</RightBox>
+            <RightBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 3</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </RightBox>
           </BoxContainer>
         </BoxContainer>
       </Container>

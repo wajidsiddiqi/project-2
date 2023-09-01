@@ -259,16 +259,15 @@ const RightBox = styled.div`
   padding: 2rem;
   box-shadow: black 0px 3px;
   border-radius: 0rem 5rem 5rem 5rem;
-  width: 40rem;
+  width: 100%;
   height: 21.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: 1474px) {
-    width: 100%;
-    height: 21.5rem;
+  @media (max-width: 775px) {
+    height: 17.5rem;
   }
 `;
 

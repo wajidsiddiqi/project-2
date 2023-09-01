@@ -43,7 +43,7 @@ const MainH1Title = styled.h1`
   }
 
   @media (max-width: 370px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 

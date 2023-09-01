@@ -21,6 +21,8 @@ const PageWrapperDark = styled(MainPageWrapper)`
   height: auto;
   background-color: #a474c6;
   padding: 0rem 2rem 6.5rem 2rem;
+  justify-content: unset;
+  align-items: unset;
 `;
 
 const PageWrapperLight = styled(PageWrapperDark)`
@@ -38,6 +40,10 @@ const MainH1Title = styled.h1`
   @media (max-width: 1042px) {
     font-size: 3rem;
     margin: 0.5rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 2rem;
   }
 `;
 
@@ -65,6 +71,16 @@ const H2TitleDark = styled.h2`
 
   @media (max-width: 1042px) {
     font-size: 2rem;
+    margin: 0.5rem;
+  }
+
+  @media (max-width: 475px) {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 1rem;
     margin: 0.5rem;
   }
 `;
@@ -99,6 +115,14 @@ const ParaMid = styled(ParaBig)`
 
   @media (max-width: 1042px) {
     font-size: 1.2rem;
+  }
+
+  @media (max-width: 475px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 0.7rem;
   }
 `;
 

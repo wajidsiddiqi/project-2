@@ -134,11 +134,6 @@ const Timeline = ({ setObserver, callback }) => {
 };
 
 const Timeline2 = ({ setObserver, callback }) => {
-  const [message1, setMessage1] = useState("");
-  const [message2, setMessage2] = useState("");
-  const [message3, setMessage3] = useState("");
-  const [message4, setMessage4] = useState("");
-
   const timeline1 = useRef(null);
   const timeline2 = useRef(null);
   const timeline3 = useRef(null);
@@ -149,89 +144,16 @@ const Timeline2 = ({ setObserver, callback }) => {
   const circle3 = useRef(null);
   const circle4 = useRef(null);
 
-  const someCallback = () => {
-    setMessage1(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 1</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-    callback();
-  };
-
-  const someCallback2 = () => {
-    setMessage2(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 2</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-  };
-
-  const someCallback3 = () => {
-    setMessage3(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 3</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-  };
-
-  const someCallback4 = () => {
-    setMessage4(() => {
-      return (
-        <div>
-          <Fade bottom>
-            <H2TitleDark>Phase 4</H2TitleDark>
-            <ParaMid>
-              Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam incidunt
-              quo cumque laboriosam sit quos tenetur. Aut voluptatem possimus
-              eum explicabo debitis nam eius debitis. Et suscipit laborum et
-              nulla consequuntur ea dolore repellat.
-            </ParaMid>
-          </Fade>
-        </div>
-      );
-    });
-  };
-
   useEffect(() => {
     setObserver(timeline1.current);
     setObserver(timeline2.current);
     setObserver(timeline3.current);
     setObserver(timeline4.current);
     setObserver(timeline5.current);
-    setObserver(circle1.current, someCallback);
-    setObserver(circle2.current, someCallback2);
-    setObserver(circle3.current, someCallback3);
-    setObserver(circle4.current, someCallback4);
+    setObserver(circle1.current);
+    setObserver(circle2.current);
+    setObserver(circle3.current);
+    setObserver(circle4.current);
   }, []);
 
   return (
@@ -262,10 +184,58 @@ const Timeline2 = ({ setObserver, callback }) => {
         </CircleAndTimelineContainer>
 
         <BoxContainer style={{ flexDirection: "column" }}>
-          <RightBox>{message1}</RightBox>
-          <RightBox>{message2}</RightBox>
-          <RightBox>{message3}</RightBox>
-          <RightBox>{message4}</RightBox>
+          <BoxContainer style={{ top: "-45px" }}>
+            <RightBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 1</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </RightBox>
+          </BoxContainer>
+          <BoxContainer style={{ top: "22px" }}>
+            <RightBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 2</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </RightBox>
+          </BoxContainer>
+          <BoxContainer style={{ top: "90px" }}>
+            <RightBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 3</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </RightBox>
+          </BoxContainer>
+          <BoxContainer style={{ top: "150px" }}>
+            <RightBox>
+              <Fade bottom>
+                <H2TitleDark>Phase 4</H2TitleDark>
+                <ParaMid>
+                  Lorem ipsum dolor sit amet. Aut dolore sequi ad aperiam
+                  incidunt quo cumque laboriosam sit quos tenetur. Aut
+                  voluptatem possimus eum explicabo debitis nam eius debitis. Et
+                  suscipit laborum et nulla consequuntur ea dolore repellat.
+                </ParaMid>
+              </Fade>
+            </RightBox>
+          </BoxContainer>
         </BoxContainer>
       </Container>
     </TimelineWrapper>

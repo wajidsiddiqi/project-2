@@ -42,7 +42,7 @@ const MainH1Title = styled.h1`
     margin: 0.5rem;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 370px) {
     font-size: 2rem;
   }
 `;
@@ -79,8 +79,8 @@ const H2TitleDark = styled.h2`
     margin: 0.5rem;
   }
 
-  @media (max-width: 360px) {
-    font-size: 1rem;
+  @media (max-width: 370px) {
+    font-size: 1.2rem;
     margin: 0.5rem;
   }
 `;
@@ -121,8 +121,8 @@ const ParaMid = styled(ParaBig)`
     font-size: 1rem;
   }
 
-  @media (max-width: 360px) {
-    font-size: 0.7rem;
+  @media (max-width: 370px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -293,6 +293,10 @@ const RightBox = styled.div`
   @media (max-width: 775px) {
     height: 17.5rem;
   }
+
+  @media (max-width: 475px) {
+    padding: 1rem;
+  }
 `;
 
 const LeftBox = styled(RightBox)`
@@ -318,6 +322,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media (max-width: 370px) {
+    gap: 0rem;
+  }
 `;
 
 const GalleryContainer = styled.div`

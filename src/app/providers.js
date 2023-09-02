@@ -19,7 +19,9 @@ export function Providers({ children }) {
 
   return (
     <WagmiConfig config={config}>
-      <ConnectKitProvider>{mounted && children}</ConnectKitProvider>
+      <ConnectKitProvider theme="rounded">
+        {mounted && children}
+      </ConnectKitProvider>
     </WagmiConfig>
   );
 }

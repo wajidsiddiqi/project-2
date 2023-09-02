@@ -108,6 +108,10 @@ const ParaBig = styled.p`
     font-size: 1.5rem;
     margin: 0.5rem;
   }
+
+  @media (max-width: 340px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const ParaMid = styled(ParaBig)`
@@ -162,6 +166,14 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const HeaderBtn = styled(Center)`
+  gap: 2rem;
+
+  @media (max-width: 360px) {
+    gap: 1rem;
+  }
 `;
 
 const CenterSpaceAround = styled(Center)`
@@ -426,9 +438,13 @@ const StyledFooter = styled.footer`
 const FooterPara = styled.p`
   color: #a474c6;
   font-size: 1.4rem;
-  margin: 1rem 0rem 1rem 1rem;
+  margin: 1rem 1rem 0rem 1rem;
   line-height: 1;
   text-shadow: black 0px 1px;
+
+  @media (max-width: 525px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export {
@@ -475,4 +491,5 @@ export {
   ScrollToTopButtonWrapper,
   FooterPara,
   StyledFooter,
+  HeaderBtn,
 };

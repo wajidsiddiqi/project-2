@@ -50,7 +50,9 @@ export default function Header() {
     <StyledNav>
       <MaxWidth>
         <CenterSpaceBetween>
-          <Image src="/assets/logo.png" width="50" height="60" alt="Logo" />
+          <NextLink href="/" style={{ textDecoration: "none" }}>
+            <Image src="/assets/logo.png" width="50" height="60" alt="Logo" />
+          </NextLink>
 
           {/* Hamburger Menu */}
           {isMobile && isOpen && (
@@ -64,6 +66,8 @@ export default function Header() {
                 zIndex: "998",
                 transition: "right 0.3s ease-in-out",
                 padding: "0",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <CenterSpaceAround style={{ flexDirection: "column" }}>

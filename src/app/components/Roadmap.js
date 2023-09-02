@@ -224,7 +224,7 @@ const Timeline2 = ({ setObserver, callback }) => {
               </Fade>
             </RightBox>
           </BoxContainer>
-          <BoxContainer style={{ top: "150px" }}>
+          <BoxContainer style={{ top: "160px" }}>
             <RightBox>
               <Fade bottom>
                 <H2TitleDark>Phase 4</H2TitleDark>

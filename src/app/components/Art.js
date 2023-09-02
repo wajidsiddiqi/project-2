@@ -5,6 +5,7 @@ import {
   H1TitleDark,
   MaxWidth,
   GalleryContainer,
+  Center,
   ImageWrapper,
 } from "@/app/styles/styles.js";
 
@@ -38,7 +39,9 @@ export default function Art() {
   return (
     <PageWrapperLight id="art">
       <MaxWidth>
-        <H1TitleDark>Art</H1TitleDark>
+        <Center>
+          <H1TitleDark>Art</H1TitleDark>
+        </Center>
         <Gallery images={generateImageUrls()} />
       </MaxWidth>
     </PageWrapperLight>

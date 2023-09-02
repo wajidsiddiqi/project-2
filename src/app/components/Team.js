@@ -10,13 +10,16 @@ import {
   Icons,
   ImageStyle,
   Box,
+  Center,
 } from "@/app/styles/styles.js";
 
 export default function Team() {
   return (
     <PageWrapperDark id="team">
       <MaxWidth>
-        <H1TitleLight>Our Team</H1TitleLight>
+        <Center>
+          <H1TitleLight>Our Team</H1TitleLight>
+        </Center>
 
         <TeamContent>
           <Box>

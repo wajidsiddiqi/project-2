@@ -190,10 +190,10 @@ export default function Header() {
 
           <HeaderBtn>
             <ConnectKitButton.Custom>
-              {({ show }) => {
+              {({ show, isConnected }) => {
                 return (
                   <StyledConnectButton onClick={show}>
-                    Connect
+                    {isConnected ? "Disconnect" : "Connect"}
                   </StyledConnectButton>
                 );
               }}

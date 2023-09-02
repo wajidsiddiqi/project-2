@@ -17,7 +17,7 @@ import {
   StyledNav,
   StyledButton,
   PageWrapperDark,
-  Center,
+  HeaderBtn,
 } from "@/app/styles/styles.js";
 
 export default function Header() {
@@ -184,7 +184,7 @@ export default function Header() {
             </CenterSpaceAround>
           )}
 
-          <Center style={{ gap: "2rem" }}>
+          <HeaderBtn>
             <ConnectKitButton.Custom>
               {({ show }) => {
                 return (
@@ -207,7 +207,7 @@ export default function Header() {
                 />
               </StyledButton>
             )}
-          </Center>
+          </HeaderBtn>
         </CenterSpaceBetween>
       </MaxWidth>
     </StyledNav>

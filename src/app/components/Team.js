@@ -3,7 +3,6 @@ import Image from "next/image";
 import {
   PageWrapperDark,
   H1TitleLight,
-  MaxWidth,
   H3Title,
   ParaSm,
   TeamContent,
@@ -16,11 +15,11 @@ import {
 export default function Team() {
   return (
     <PageWrapperDark id="team">
-      <MaxWidth>
-        <Center>
-          <H1TitleLight>Our Team</H1TitleLight>
-        </Center>
+      <Center>
+        <H1TitleLight>Our Team</H1TitleLight>
+      </Center>
 
+      <Center>
         <TeamContent>
           <Box>
             <Image
@@ -97,7 +96,7 @@ export default function Team() {
             </Icons>
           </Box>
         </TeamContent>
-      </MaxWidth>
+      </Center>
     </PageWrapperDark>
   );
 }

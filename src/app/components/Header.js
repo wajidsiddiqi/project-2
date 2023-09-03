@@ -48,7 +48,7 @@ export default function Header() {
 
   return (
     <StyledNav>
-      <MaxWidth>
+      <MaxWidth style={{ margin: "auto" }}>
         <CenterSpaceBetween>
           <NextLink href="/" style={{ textDecoration: "none" }}>
             <Image src="/assets/logo.png" width="50" height="60" alt="Logo" />

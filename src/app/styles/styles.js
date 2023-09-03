@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const MaxWidth = styled.div`
   max-width: 1600px;
+  width: 100%;
 `;
 
 const MainPageWrapper = styled.div`
@@ -329,7 +330,7 @@ const BoxContainer = styled.div`
   position: relative;
 `;
 
-const Container = styled.div`
+const Container = styled(MaxWidth)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,7 +341,7 @@ const Container = styled.div`
   }
 `;
 
-const GalleryContainer = styled.div`
+const GalleryContainer = styled(MaxWidth)`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
@@ -362,7 +363,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const TeamContent = styled.div`
+const TeamContent = styled(MaxWidth)`
   grid-template-columns: repeat(3, 1fr);
   display: grid;
   gap: 2rem;

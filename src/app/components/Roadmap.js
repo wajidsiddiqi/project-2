@@ -7,7 +7,6 @@ import {
   H1TitleLight,
   ParaMid,
   H2TitleDark,
-  MaxWidth,
   Container,
   BoxContainer,
   TimelineBar,
@@ -264,37 +263,35 @@ export default function Roadmap() {
 
   return (
     <PageWrapperDark id="roadmap">
-      <MaxWidth>
-        <Center>
-          <H1TitleLight>Roadmap</H1TitleLight>
-        </Center>
+      <Center>
+        <H1TitleLight>Roadmap</H1TitleLight>
+      </Center>
 
-        {isMobile ? (
-          <TimelineObserver
-            initialColor="#a474c6"
-            fillColor="#eef3f1"
-            handleObserve={(setObserver) => (
-              <Timeline2
-                callback={onCallback}
-                style={{ ...TimelineBar }}
-                setObserver={setObserver}
-              />
-            )}
-          />
-        ) : (
-          <TimelineObserver
-            initialColor="#a474c6"
-            fillColor="#eef3f1"
-            handleObserve={(setObserver) => (
-              <Timeline
-                callback={onCallback}
-                style={{ ...TimelineBar }}
-                setObserver={setObserver}
-              />
-            )}
-          />
-        )}
-      </MaxWidth>
+      {isMobile ? (
+        <TimelineObserver
+          initialColor="#a474c6"
+          fillColor="#eef3f1"
+          handleObserve={(setObserver) => (
+            <Timeline2
+              callback={onCallback}
+              style={{ ...TimelineBar }}
+              setObserver={setObserver}
+            />
+          )}
+        />
+      ) : (
+        <TimelineObserver
+          initialColor="#a474c6"
+          fillColor="#eef3f1"
+          handleObserve={(setObserver) => (
+            <Timeline
+              callback={onCallback}
+              style={{ ...TimelineBar }}
+              setObserver={setObserver}
+            />
+          )}
+        />
+      )}
     </PageWrapperDark>
   );
 }

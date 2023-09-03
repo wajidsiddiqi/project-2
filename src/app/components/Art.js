@@ -3,7 +3,6 @@ import Image from "next/image";
 import {
   PageWrapperLight,
   H1TitleDark,
-  MaxWidth,
   GalleryContainer,
   Center,
   ImageWrapper,
@@ -38,12 +37,12 @@ export default function Art() {
 
   return (
     <PageWrapperLight id="art">
-      <MaxWidth>
-        <Center>
-          <H1TitleDark>Art</H1TitleDark>
-        </Center>
+      <Center>
+        <H1TitleDark>Art</H1TitleDark>
+      </Center>
+      <Center>
         <Gallery images={generateImageUrls()} />
-      </MaxWidth>
+      </Center>
     </PageWrapperLight>
   );
 }

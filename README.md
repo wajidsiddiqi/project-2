@@ -1,7 +1,7 @@
-Dekstop View
+Desktop View
 
 ![Dekstop View](/deskstop.png)
 
 Mobile View
 
-![Dekstop View](/mobile.png)
+![Mobile View](/mobile.png)
